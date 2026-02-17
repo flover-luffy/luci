@@ -230,7 +230,7 @@ run_xray() {
 		json_add_string "dns_socks_port" "${dns_socks_port}"
 	}
 	[ -n "$dns_listen_port" ] && json_add_string "dns_listen_port" "${dns_listen_port}"
-
+	
 	if [ -n "$direct_dns_udp_server" ]; then
 		direct_dns_port=$(echo ${direct_dns_udp_server} | awk -F '#' '{print $2}')
 		json_add_string "direct_dns_udp_server" "$(echo ${direct_dns_udp_server} | awk -F '#' '{print $1}')"
@@ -1262,7 +1262,7 @@ start_dns() {
 			china_ng_local_dns=${LOCAL_DNS}
 			sing_box_local_dns="direct_dns_udp_server=${LOCAL_DNS}"
 		;;
-		tcp)
+		tcp)	
 			local DIRECT_DNS=$(config_t_get global direct_dns 223.5.5.5 | sed -E 's/^\[([^]]+)\]:(.*)$/\1#\2/; t; s/^([^:]+):([0-9]+)$/\1#\2/')
 			china_ng_local_dns="tcp://${DIRECT_DNS}"
 			sing_box_local_dns="direct_dns_tcp_server=${DIRECT_DNS}"
@@ -1507,7 +1507,7 @@ start_dns() {
 			ln_run "$(first_type dnsmasq)" "dnsmasq_direct" "/dev/null" -C ${DIRECT_DNSMASQ_CONF} -x ${GLOBAL_ACL_PATH}/direct_dnsmasq.pid
 			echo "${DIRECT_DNSMASQ_PORT}" > ${GLOBAL_ACL_PATH}/direct_dnsmasq_port
 		}
-
+		
 		#Rewrite the default DNS service configuration
 		#Modify the default dnsmasq service
 		lua $APP_PATH/helper_dnsmasq.lua stretch
@@ -1884,7 +1884,7 @@ start() {
 			sysctl -w net.bridge.bridge-nf-call-ip6tables=0 >/dev/null 2>&1
 		}
 	fi
-
+	
 	start_crontab
 	echolog "运行完成！\n"
 
@@ -2028,7 +2028,7 @@ get_config() {
 	REMOTE_DNS_QUERY_STRATEGY="UseIP"
 	[ "$FILTER_PROXY_IPV6" = "1" ] && REMOTE_DNS_QUERY_STRATEGY="UseIPv4"
 	DNSMASQ_FILTER_PROXY_IPV6=${FILTER_PROXY_IPV6}
-
+	
 	RESOLVFILE=/tmp/resolv.conf.d/resolv.conf.auto
 	[ -f "${RESOLVFILE}" ] && [ -s "${RESOLVFILE}" ] || RESOLVFILE=/tmp/resolv.conf.auto
 

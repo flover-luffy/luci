@@ -315,7 +315,7 @@ local function extract_domain(s)
 	local last_dot = nil
 	for i = 1, len do
 		local b = s:byte(i)
-		-- 允许的域名字符：a-zA-Z0-9.-
+		-- 允许的域名字符：a-zA-Z0-9.- 
 		if (b >= 48 and b <= 57) or (b >= 65 and b <= 90) or (b >= 97 and b <= 122) or b == 45 or b == 46 then
 			if not start then start = i end
 			if b == 46 then last_dot = i end
@@ -509,7 +509,7 @@ local function fetch_rule(rule_name, rule_type, url, exclude_domain, max_retries
 				local set_name = "passwall_" .. rule_name
 				if rule_name == "chnroute" then set_name = "passwall_chn"
 				elseif rule_name == "chnroute6" then set_name = "passwall_chn6" end
-
+                
 				local addr_type = (rule_type == "ip4") and "ipv4_addr" or "ipv6_addr"
 				gen_cache(set_name, addr_type, file_tmp, nft_file)
 				os.execute(string.format("mv -f %s %s.nft", nft_file, rule_final_path))
