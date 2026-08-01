@@ -22,7 +22,7 @@ while [ 1 -eq 1 ]; do
 		IFS= read -r cmd < "$file"
 		[ -z "$cmd" ] && continue
 		cmd_check=$(printf '%s' "$cmd" | sed 's/>.*$//;s/[[:space:]]*$//')
-
+		
 		case "$cmd_check" in
 			*dns2socks*) cmd_check=${cmd_check//:/ } ;;
 		esac
@@ -38,11 +38,11 @@ while [ 1 -eq 1 ]; do
 		# 检查是否超过最大重启次数
 		[ "$restart_count" -ge "$MAX_RESTART_COUNT" ] && continue
 
-		if ! pgrep -f "$cmd_check" >/dev/null; then
+		if ! busybox pgrep -f "$cmd_check" >/dev/null; then
 			restart_count=$((restart_count + 1))
 			echo "$restart_count" > "$stats_file"
 			#echo "${cmd} 进程挂掉，重启" >> /tmp/log/passwall.log
-			eval "$cmd 2>&1 &"
+			sh -c "nohup $cmd 2>&1 &"
 			sleep 1
 		fi
 	done

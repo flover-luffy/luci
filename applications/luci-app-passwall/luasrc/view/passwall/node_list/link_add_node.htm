@@ -8,7 +8,7 @@ local api = require "luci.passwall.api"
 		const dom = document.getElementById('modal-mask');
 		dom.style.display = 'block';
 		dom.innerHTML = '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;"><%:Processing, please wait…%></div>';
-
+		
 		const chunkSize = 1000;  // 分片发送以突破uhttpd的限制，每块1000字符
 		const totalChunks = Math.ceil(link.length / chunkSize);
 		let currentChunk = 0;

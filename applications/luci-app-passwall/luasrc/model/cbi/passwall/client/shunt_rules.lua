@@ -2,6 +2,8 @@ local api = require "luci.passwall.api"
 local appname = "passwall"
 local datatypes = api.datatypes
 
+api.set_default_cbi()
+
 m = Map(appname, "Sing-Box/Xray " .. translate("Shunt Rule"))
 m.redirect = api.url("rule")
 api.set_apply_on_parse(m)
@@ -60,6 +62,7 @@ end
 protocol = s:option(MultiValue, "protocol", translate("Protocol"))
 protocol:value("http")
 protocol:value("tls")
+protocol:value("quic")
 protocol:value("bittorrent")
 protocol.widget = "checkbox"
 protocol.default = nil
@@ -244,4 +247,4 @@ ip_list.description = "<br /><ul>"
 
 o = s:option(Flag, "invert", "Invert", translate("Invert match result.") .. " " .. translate("Only support Sing-Box."))
 
-return m
+return api.return_map(m)

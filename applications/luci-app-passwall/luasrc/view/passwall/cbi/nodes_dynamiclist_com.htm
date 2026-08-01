@@ -6,9 +6,10 @@
 --	Description: Passwall(2) UI template
 -- It is the common part of the template and cannot be used independently
 %>
+<script src="<%=resource%>/view/passwall/Sortable.min.js"></script>
 <style>
 /* 主下拉按钮的下箭头 */
-.lv-arrow-down {
+.dl-arrow-down {
 	width: 0;
 	height: 0;
 	border-left: 5px solid transparent;
@@ -19,7 +20,7 @@
 	vertical-align: middle;
 }
 /* 组标题的右箭头（折叠） */
-.lv-arrow-right {
+.dl-arrow-right {
 	width: 0;
 	height: 0;
 	border-top: 4px solid transparent;
@@ -29,7 +30,7 @@
 	vertical-align: middle;
 }
 /* 组标题的下箭头（展开） */
-.lv-arrow-down-small {
+.dl-arrow-down-small {
 	width: 0;
 	height: 0;
 	border-left: 4px solid transparent;
@@ -39,7 +40,7 @@
 	vertical-align: middle;
 }
 /* 基础列表项样式 */
-.cbi-listvalue-panel li[data-key] {
+.cbi-dynamiclist-panel li[data-key] {
 	padding: 6px;
 	border-radius: 4px;
 	cursor: pointer;
@@ -49,53 +50,44 @@
 	transition: background-color 0.15s ease;
 }
 /* 鼠标悬停效果 - 使用透明度避免覆盖问题 */
-.cbi-listvalue-panel li[data-key]:hover {
+.cbi-dynamiclist-panel li[data-key]:hover {
 	background-color: rgba(0, 123, 255, 0.1);
 }
-/* 选中项样式 - 使用更高优先级 */
-.cbi-listvalue-panel li[data-key].is-selected {
-	background-color: #007bff !important;
-	color: white !important;
-	font-weight: 600 !important;
-}
-/* 选中项悬停时保持主色调 */
-.cbi-listvalue-panel li[data-key].is-selected:hover {
-	background-color: #0056b3 !important;
-}
 
-.lv-dropdown-container {
+.dl-dropdown-container {
 	display: inline-block;
 	position: relative;
 	min-width: 220px;
 	white-space: nowrap;
 }
 @media (max-width: 1152px) {
-	.lv-dropdown-container {
+	.dl-dropdown-container {
 		white-space: normal;
 	}
 }
 @media (max-width: 600px) {
-	.lv-dropdown-container {
+	.dl-dropdown-container {
 		display: block;
 		white-space: normal;
 	}
 }
 
-.lv-dropdown-display {
+.dl-dropdown-display {
 	cursor: pointer;
 	display: inline-flex;
 	align-items: center;
 	justify-content: space-between;
 	box-sizing: border-box;
 }
-.lv-dropdown-label {
+.dl-dropdown-label,
+.dl-selected-label {
 	display: inline-block;
 	overflow: hidden;
 	white-space: nowrap;
 	width: 100%;
 	text-align: left;
 }
-.lv-dropdown-panel {
+.dl-dropdown-panel {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -107,7 +99,7 @@
 	overflow: auto;
 	overscroll-behavior: contain;
 }
-.lv-dropdown-search {
+.dl-dropdown-search {
 	width: 100%;
 	max-width: 100% !important;
 	min-width: 0 !important;
@@ -116,7 +108,7 @@
 	border: 1px solid #e0e0e0;
 	border-radius: 4px;
 }
-.lv-group-title {
+.dl-group-title {
 	cursor: pointer;
 	padding: 6px;
 	border-radius: 4px;
@@ -125,12 +117,12 @@
 	line-height: normal;
 	white-space: nowrap;
 }
-.lv-group-list {
+.dl-group-list {
 	list-style: none;
 	margin: 6px 0 0 8px;
 	padding: 0;
 }
-.lv-group-item {
+.dl-group-item {
 	padding: 6px;
 	border-radius: 4px;
 	cursor: pointer;
@@ -139,18 +131,32 @@
 	text-overflow: ellipsis;
 	text-align: left !important;
 }
+.dl-selected-list {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.dl-remove {
+	margin-left: 8px;
+	cursor: pointer;
+	color: red;
+}
+.dragging-row {
+	background-color: rgba(131, 191, 255, 0.7) !important;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 </style>
 
 <script type="text/javascript">
 //<![CDATA[
 	// css helper functions
-	function lv_camelToKebab(str) {
+	function dl_camelToKebab(str) {
 		return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase()
 	}
 
-	function lv_style2Css(styleDeclaration, properties) {
+	function dl_style2Css(styleDeclaration, properties) {
 		const cssRules = properties.map(prop => {
-			const kebabCaseProp = lv_camelToKebab(prop);[1, 5]
+			const kebabCaseProp = dl_camelToKebab(prop);[1, 5]
 			const value = styleDeclaration[prop]
 			if (value) {
 				return `${kebabCaseProp}: ${value};`
@@ -161,7 +167,7 @@
 		return cssRules.filter(Boolean).join(' ')
 	}
 
-	const lv_parseColorToRgba = (function() {
+	const dl_parseColorToRgba = (function() {
 		// Create canvas and context once (Closure)
 		const canvas = document.createElement('canvas');
 		canvas.width = 1;
@@ -188,7 +194,7 @@
 	})();
 
 	// Helper to convert back to Hex (for output consistency)
-	function lv_rgbToHex(r, g, b) {
+	function dl_rgbToHex(r, g, b) {
 		const toHex = (n) => {
 			const hex = Math.max(0, Math.min(255, n)).toString(16)
 			return hex.length === 1 ? '0' + hex : hex
@@ -196,14 +202,14 @@
 		return `#${toHex(r)}${toHex(g)}${toHex(b)}`
 	}
 
-	function lv_isTransparent(color) {
-		const cleanColor = lv_parseColorToRgba(color);
+	function dl_isTransparent(color) {
+		const cleanColor = dl_parseColorToRgba(color);
 		// check #RRGGBBAA for transparency
 		return !cleanColor || (cleanColor.a !== undefined && !cleanColor.a);
 	}
 
-	function lv_getColorSchema(color) {
-		const rgb = lv_parseColorToRgba(color);
+	function dl_getColorSchema(color) {
+		const rgb = dl_parseColorToRgba(color);
 		if (!rgb) return 'unknown'; // Handle invalid colors
 		// Calculate YIQ brightness (human eye perception)
 		const brightness = ((rgb.r * 299) + (rgb.g * 587) + (rgb.b * 114)) / 1000;
@@ -211,36 +217,36 @@
 		return brightness > 128 ? 'light' : 'dark';
 	}
 
-	function lv_lighter(color, amount) {
-		const rgb = lv_parseColorToRgba(color);
+	function dl_lighter(color, amount) {
+		const rgb = dl_parseColorToRgba(color);
 		if (!rgb) return color;
 		// Add amount to each channel
 		const r = rgb.r + amount;
 		const g = rgb.g + amount;
 		const b = rgb.b + amount;
 		// Convert back to Hex (clamping happens inside rgbToHex)
-		return lv_rgbToHex(r, g, b);
+		return dl_rgbToHex(r, g, b);
 	}
 
-	function lv_darker(color, amount) {
-		const rgb = lv_parseColorToRgba(color);
+	function dl_darker(color, amount) {
+		const rgb = dl_parseColorToRgba(color);
 		if (!rgb) return color;
 		// Subtract amount from each channel
 		const r = rgb.r - amount;
 		const g = rgb.g - amount;
 		const b = rgb.b - amount;
 
-		return lv_rgbToHex(r, g, b);
+		return dl_rgbToHex(r, g, b);
 	}
 
 	// copy select styles
-	function lv_adaptiveStyle(cbid) {
+	function dl_adaptiveStyle(cbid) {
 		const display = document.getElementById(cbid + ".display");
-		const hiddenSelect = document.getElementById(cbid);
+		const hiddenRef = document.getElementById(cbid + ".ref");
 		const panel = document.getElementById(cbid + ".panel");
-		if (hiddenSelect && display) {
-			const elOption = hiddenSelect.getElementsByTagName("option")[0]
-			const styleSelect = window.getComputedStyle(hiddenSelect)
+		if (hiddenRef && display) {
+			const elOption = hiddenRef.getElementsByTagName("option")[0]
+			const styleSelect = window.getComputedStyle(hiddenRef)
 			const styleOption = window.getComputedStyle(elOption)
 			const styleBody = window.getComputedStyle(document.body)
 
@@ -252,38 +258,25 @@
 			document.head.appendChild(styleNode)
 			// trace back from option -> select -> body for background color
 			const panelRadius = styleSelect.borderRadius;
-			const optionColor = !lv_isTransparent(styleOption.backgroundColor) ? styleOption.backgroundColor : !lv_isTransparent(styleSelect.backgroundColor) ? styleSelect.backgroundColor : styleBody.backgroundColor
-			const titleColor = lv_getColorSchema(optionColor) === "light" ? lv_darker(optionColor, 30) : lv_lighter(optionColor, 30)
-			const selectStyleCSS = [`#${CSS.escape(cbid + ".display")} {`, lv_style2Css(styleSelect, styleNames), lv_style2Css(styleSelect, ["backgroundColor"]), "}"]
-			const optionStyleCSS = [`#${CSS.escape(cbid + ".panel")}  {`, lv_style2Css(styleOption, styleNames), `background-color: ${optionColor};`, `border-radius: ${panelRadius};`, "}"]
-			const titleStyleCSS = [`#${CSS.escape(cbid + ".panel")} .lv-group-title  {`, `background-color: ${titleColor} !important;`, "}"]
+			const optionColor = !dl_isTransparent(styleOption.backgroundColor) ? styleOption.backgroundColor : !dl_isTransparent(styleSelect.backgroundColor) ? styleSelect.backgroundColor : styleBody.backgroundColor
+			const titleColor = dl_getColorSchema(optionColor) === "light" ? dl_darker(optionColor, 30) : dl_lighter(optionColor, 30)
+			const selectStyleCSS = [`#${CSS.escape(cbid + ".display")}, .dl-selected-item {`, dl_style2Css(styleSelect, styleNames), dl_style2Css(styleSelect, ["backgroundColor"]), "}"]
+			const optionStyleCSS = [`#${CSS.escape(cbid + ".panel")}  {`, dl_style2Css(styleOption, styleNames), `background-color: ${optionColor};`, `border-radius: ${panelRadius};`, "}"]
+			const titleStyleCSS = [`#${CSS.escape(cbid + ".panel")} .dl-group-title  {`, `background-color: ${titleColor} !important;`, "}"]
 			styleNode.textContent = [].concat(selectStyleCSS, optionStyleCSS, titleStyleCSS).join("\n")
 		}
 	}
 
-	function lv_idSafe(id) {
+	function dl_idSafe(id) {
 		return id
 			.trim()
 			.replace(/\s+/g, "-")
 			.replace(/[\x00-\x1F\x7F]/g, "");
 	}
 
-	// 高亮当前选中的项
-	function lv_highlightSelectedItem(listContainer, hiddenSelect) {
-		const allItems = listContainer.querySelectorAll("li[data-key]");
-		const currentKey = hiddenSelect.options[0].value;
-		allItems.forEach(item => {
-			item.classList.remove("is-selected");
-			if (item.getAttribute('data-key') === currentKey) {
-				item.classList.add("is-selected");
-			}
-		});
-	}
-
 	// 更新组内选中计数
-	function lv_updateGroupCounts(cbid, listContainer, hiddenSelect, searchInput) {
-		const groups = listContainer.querySelectorAll(".lv-group");
-		const currentKey = hiddenSelect.options[0].value;
+	function dl_updateGroupCounts(cbid, listContainer, searchInput) {
+		const groups = listContainer.querySelectorAll(".dl-group");
 		const isSearching = searchInput.value.trim() !== "";
 		groups.forEach(group => {
 			const gname = group.getAttribute("data-group");
@@ -305,27 +298,16 @@
 					span.style.fontWeight = "normal";
 				}
 			} else {
-				// 默认状态：显示选中项数量
-				let selectedCount = 0;
-				items.forEach(li => {
-					if (li.getAttribute('data-key') === currentKey) {
-						selectedCount = 1;
-					}
-				});
-				span.textContent = "(" + selectedCount + "/" + items.length + ")";
-				if (selectedCount > 0) {
-					span.style.color = "#007bff";
-					span.style.fontWeight = "600";
-				} else {
-					span.style.color = "";
-					span.style.fontWeight = "normal";
-				}
+				// 默认状态
+				span.textContent = "(" + items.length + ")";
+				span.style.color = "";
+				span.style.fontWeight = "normal";
 			}
 		});
 	}
 
 	//搜索过滤器：按 name 或 label 做模糊匹配，搜索时自动展开所有组并隐藏不匹配条目
-	function lv_filterList(keyword, cbid, listContainer, hiddenSelect, searchInput) {
+	function dl_filterList(keyword, cbid, listContainer, searchInput) {
 		keyword = (keyword || "").toLowerCase().trim();
 		const topItems = listContainer.querySelectorAll("ul li[data-key]");
 		topItems.forEach(li=>{
@@ -336,7 +318,7 @@
 				li.style.display = "none";
 			}
 		});
-		const groups = listContainer.querySelectorAll(".lv-group");
+		const groups = listContainer.querySelectorAll(".dl-group");
 		groups.forEach(group=>{
 			const items = group.querySelectorAll("li[data-key]");
 			let matchCount = 0;
@@ -350,27 +332,26 @@
 				}
 			});
 			group.style.display = (matchCount === 0 && keyword !== "") ? "none" : "block";
-			const ul = group.querySelector(".lv-group-list");
+			const ul = group.querySelector(".dl-group-list");
 			const gname = group.getAttribute("data-group");
 			const arrow = document.getElementById("arrow-" + cbid + "-" + gname);
 			if (keyword) {
 				if (ul) ul.style.display = (matchCount > 0 ? "block" : "none");
-				if (arrow) arrow.className = (matchCount > 0 ? "lv-arrow-down-small" : "lv-arrow-right");
+				if (arrow) arrow.className = (matchCount > 0 ? "dl-arrow-down-small" : "dl-arrow-right");
 			} else {
 				if (ul) ul.style.display = "none";
-				if (arrow) arrow.className = "lv-arrow-right";
+				if (arrow) arrow.className = "dl-arrow-right";
 			}
 		});
-		lv_updateGroupCounts(cbid, listContainer, hiddenSelect, searchInput);
-		lv_highlightSelectedItem(listContainer, hiddenSelect);
+		dl_updateGroupCounts(cbid, listContainer, searchInput);
 	}
 
 	// 切换单个组（点击组标题）
-	function lv_toggleGroup(listContainer, cbid, g) {
-		g = lv_idSafe(g);
-		const group = listContainer.querySelector(".lv-group[data-group='" + g + "']");
+	function dl_toggleGroup(listContainer, cbid, g) {
+		g = dl_idSafe(g);
+		const group = listContainer.querySelector(".dl-group[data-group='" + g + "']");
 		if (!group) return;
-		const ul = group.querySelector(".lv-group-list");
+		const ul = group.querySelector(".dl-group-list");
 		const arrow = document.getElementById("arrow-" + cbid + "-" + g);
 		if (!ul) return;
 		const searchInput = document.getElementById(cbid + ".search");
@@ -379,68 +360,28 @@
 
 		if (isExpanded) {
 			ul.style.display = "none";
-			if (arrow) arrow.className = "lv-arrow-right";
+			if (arrow) arrow.className = "dl-arrow-right";
 		} else {
 			ul.style.display = "block";
-			if (arrow) arrow.className = "lv-arrow-down-small";
+			if (arrow) arrow.className = "dl-arrow-down-small";
 
 			if (!isSearching) {
-				const allGroups = listContainer.querySelectorAll(".lv-group");
+				const allGroups = listContainer.querySelectorAll(".dl-group");
 				allGroups.forEach(otherGroup => {
 					if (otherGroup !== group) {
-						const otherUl = otherGroup.querySelector(".lv-group-list");
+						const otherUl = otherGroup.querySelector(".dl-group-list");
 						const otherGname = otherGroup.getAttribute("data-group");
 						const otherArrow = document.getElementById("arrow-" + cbid + "-" + otherGname);
 						if (otherUl) otherUl.style.display = "none";
-						if (otherArrow) otherArrow.className = "lv-arrow-right";
+						if (otherArrow) otherArrow.className = "dl-arrow-right";
 					}
 				});
 			}
 		}
 	}
 
-	// 展开包含当前 hiddenSelect 值的组（初始化或打开面板时使用）
-	function lv_expandGroupOfCurrent(cbid, listContainer, hiddenSelect) {
-		const key = hiddenSelect.options[0].value;
-		if (!key) return;
-		const targetLi = listContainer.querySelector(`li[data-key='${CSS.escape(key)}']`);
-		if (!targetLi) return;
-		let parentGroup = targetLi.closest(".lv-group");
-		if (parentGroup) {
-			const ul = parentGroup.querySelector(".lv-group-list");
-			const gname = parentGroup.getAttribute("data-group");
-			const arrow = document.getElementById("arrow-" + cbid + "-" + gname);
-			if (ul) ul.style.display = "block";
-			if (arrow) arrow.className = "lv-arrow-down-small";
-			const allGroups = listContainer.querySelectorAll(".lv-group");
-			allGroups.forEach(gp=>{
-				if (gp !== parentGroup) {
-					const gul = gp.querySelector(".lv-group-list");
-					const otherGname = gp.getAttribute("data-group");
-					const gar = document.getElementById("arrow-" + cbid + "-" + otherGname);
-					if (gul) gul.style.display = "none";
-					if (gar) gar.className = "lv-arrow-right";
-				}
-			});
-		} else {
-			const allGroups = listContainer.querySelectorAll(".lv-group");
-			allGroups.forEach(gp=>{
-				const gul = gp.querySelector(".lv-group-list");
-				const gname = gp.getAttribute("data-group");
-				const gar = document.getElementById("arrow-" + cbid + "-" + gname);
-				if (gul) gul.style.display = "none";
-				if (gar) gar.className = "lv-arrow-right";
-			});
-		}
-		if (targetLi) {
-			requestAnimationFrame(() => {
-				targetLi.scrollIntoView({ block: "nearest" });
-			});
-		}
-	}
-
 	// 计算panel位置
-	function lv_repositionPanel(panel, display) {
+	function dl_repositionPanel(panel, display) {
 		if (!panel || panel.style.display === "none") return;
 		const rect = display.getBoundingClientRect();
 		const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -480,21 +421,19 @@
 	}
 
 	// 打开/关闭面板
-	function lv_openPanel(cbid, display, panel, listContainer, hiddenSelect, searchInput) {
+	function dl_openPanel(cbid, display, panel, listContainer, searchInput) {
 		if (!panel._moved) {
 			document.body.appendChild(panel);
 			panel._moved = true;
 		}
-		lv_expandGroupOfCurrent(cbid, listContainer, hiddenSelect);
-		lv_highlightSelectedItem(listContainer, hiddenSelect);
 		panel.style.display = "block";
-		lv_repositionPanel(panel, display);
+		dl_repositionPanel(panel, display);
 		// 失焦监听
 		const handler = function(e){
 			const target = e.target;
 			if (panel.style.display !== "none") {
 				if (!panel.contains(target) && !display.contains(target)) {
-					lv_closePanel(cbid, panel, listContainer, hiddenSelect, searchInput, display);
+					dl_closePanel(cbid, panel, listContainer, searchInput, display);
 				}
 			}
 		}
@@ -507,17 +446,17 @@
 			ticking = true;
 			requestAnimationFrame(function () {
 				ticking = false;
-				lv_repositionPanel(panel, display);
+				dl_repositionPanel(panel, display);
 			});
 		};
 		panel._repositionHandler = repositionHandler;
 		window.addEventListener("scroll", repositionHandler, true);
 		window.addEventListener("resize", repositionHandler);
 	}
-	function lv_closePanel(cbid, panel, listContainer, hiddenSelect, searchInput) {
+	function dl_closePanel(cbid, panel, listContainer, searchInput) {
 		panel.style.display = "none";
 		searchInput.value = "";
-		lv_filterList("", cbid, listContainer, hiddenSelect, searchInput);
+		dl_filterList("", cbid, listContainer, searchInput);
 		// document click
 		if (panel._docClickHandler) {
 			document.removeEventListener("click", panel._docClickHandler);
@@ -531,28 +470,51 @@
 		}
 	}
 
+	function dl_add_item(cbid, key, label) {
+		const container = document.getElementById(cbid + ".selected");
+		const hidden = document.getElementById(cbid + ".hidden");
+		if (container.querySelector(`[data-key="${key}"]`)) return;
+		const item = document.createElement("div");
+		item.className = "cbi-input-value cbi-input-select dl-dropdown-display dl-selected-item";
+		item.setAttribute("data-key", key);
+		item.innerHTML = `
+			<span class="dl-selected-label" style="cursor:grab;" title="${label}">${label}</span>
+			<span class="dl-remove">×</span>
+		`;
+		item.querySelector(".dl-remove").onclick = function(){
+			item.remove();
+			dl_update_hidden(cbid);
+		};
+		container.appendChild(item);
+		dl_update_hidden(cbid);
+	}
+
+	function dl_update_hidden(cbid) {
+		const main = document.getElementById(cbid + ".main");
+		const container = document.getElementById(cbid + ".selected");
+		main.querySelectorAll(`input[type="hidden"][name="${cbid}"]`).forEach(el => el.remove());
+		let items = container.querySelectorAll(".dl-selected-item");
+		items.forEach(el => {
+			let key = el.getAttribute("data-key");
+			let input = document.createElement("input");
+			input.type = "hidden";
+			input.name = cbid;
+			input.value = key;
+			main.insertBefore(input, container);
+		});
+	}
+
 	// 动态生成下拉框
-	window.lv_dropdown_rendered = {};
-	function lv_escape_html(s) {
+	window.dl_dropdown_rendered = {};
+	function dl_escape_html(s) {
 		return s.replace(/[&<>"']/g, c => ({
 			"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
 		}[c]));
 	}
-	
-	function lv_change(cbid, listContainer, hiddenSelect, labelSpan, searchInput, new_key, new_text) {
-		//改值
-		hiddenSelect.options[0].value = new_key;
-		hiddenSelect.options[0].text = new_key;
-		hiddenSelect.value = new_key;
-		labelSpan.textContent = lv_ellipsisByWidth(cbid, new_text);
-		labelSpan.title = new_text;
-		lv_highlightSelectedItem(listContainer, hiddenSelect);
-		lv_updateGroupCounts(cbid, listContainer, hiddenSelect, searchInput);
-	}
-	
-	function lv_render_dropdown_list(cbid, panel, listContainer, hiddenSelect, labelSpan, searchInput, display) {
-		if (window.lv_dropdown_rendered[cbid]) return;
-		const data = window.lv_dropdown_data[cbid];
+
+	function dl_render_dropdown_list(cbid, panel, listContainer, labelSpan, searchInput, display) {
+		if (window.dl_dropdown_rendered[cbid]) return;
+		const data = window.dl_dropdown_data[cbid];
 		if (!data) return;
 		if (!listContainer) return;
 
@@ -565,10 +527,10 @@
 			data.ungrouped.forEach(item => {
 				html += `
 					<li data-key="${item.key}"
-						data-node-name="${lv_escape_html(item.label.toLowerCase())}"
+						data-node-name="${dl_escape_html(item.label.toLowerCase())}"
 						class="list-item">
-						<span class="lv-item-label" style="margin-left:12px;">
-							${lv_escape_html(item.label)}
+						<span class="dl-item-label" style="margin-left:12px;">
+							${dl_escape_html(item.label)}
 						</span>
 					</li>`;
 			});
@@ -581,23 +543,23 @@
 			const items = data.groups[gname];
 
 			html += `
-			<div class="lv-group" data-group="${lv_idSafe(gname)}" style="margin-bottom:8px;">
-				<div class="lv-group-title" data-group-name="${lv_idSafe(gname)}">
-					<span class="lv-arrow-right" id="arrow-${cbid}-${lv_idSafe(gname)}"></span>
-					<b style="margin-left:6px;">${lv_escape_html(gname)}</b>
-					<span id="group-count-${cbid}-${lv_idSafe(gname)}"
-						style="margin-left:8px;">(0/${items.length})</span>
+			<div class="dl-group" data-group="${dl_idSafe(gname)}" style="margin-bottom:8px;">
+				<div class="dl-group-title" data-group-name="${dl_idSafe(gname)}">
+					<span class="dl-arrow-right" id="arrow-${cbid}-${dl_idSafe(gname)}"></span>
+					<b style="margin-left:6px;">${dl_escape_html(gname)}</b>
+					<span id="group-count-${cbid}-${dl_idSafe(gname)}"
+						style="margin-left:8px;">(${items.length})</span>
 				</div>
-				<ul id="group-${cbid}-${lv_idSafe(gname)}" class="lv-group-list" style="display:none">
+				<ul id="group-${cbid}-${dl_idSafe(gname)}" class="dl-group-list" style="display:none">
 			`;
 
 			items.forEach(item => {
 				html += `
 				<li data-key="${item.key}"
-					data-node-name="${lv_escape_html(item.label.toLowerCase())}"
-					class="lv-group-item">
-					<span class="lv-item-label" title="${lv_escape_html(item.label)}">
-						${lv_escape_html(item.label)}
+					data-node-name="${dl_escape_html(item.label.toLowerCase())}"
+					class="dl-group-item">
+					<span class="dl-item-label" title="${dl_escape_html(item.label)}">
+						${dl_escape_html(item.label)}
 					</span>
 				</li>`;
 			});
@@ -610,10 +572,9 @@
 
 		listContainer.innerHTML = html;
 
-		window.lv_dropdown_rendered[cbid] = true;
+		window.dl_dropdown_rendered[cbid] = true;
 
-		lv_adaptiveStyle(cbid);
-		lv_updateGroupCounts(cbid, listContainer, hiddenSelect, searchInput);
+		dl_adaptiveStyle(cbid);
 
 		// 点击项（无组与组内项都使用 li[data-key]）
 		listContainer.addEventListener("click", function(e){
@@ -621,25 +582,17 @@
 			while(li && li !== listContainer && !li.hasAttribute('data-key')) li = li.parentNode;
 			if(!li || li === listContainer) return;
 			const key = li.getAttribute('data-key') || "";
-			const text = li.querySelector(".lv-item-label")?.textContent || li.textContent || key;
-
-			const changed = key !== hiddenSelect.value;
-			if (changed) {
-				//改值
-				lv_change(cbid, listContainer, hiddenSelect, labelSpan, searchInput, key, text);
-			}
-			lv_closePanel(cbid,panel,listContainer,hiddenSelect,searchInput);
-			if (changed) {
-				setTimeout(() => {
-					hiddenSelect.dispatchEvent(new Event('change', { bubbles: true }));
-				}, 0);
-			}
+			const text = li.querySelector(".dl-item-label")?.textContent || li.textContent || key;
+			//改值
+			dl_add_item(cbid, key, text);
+			labelSpan.innerText = "<%=translate("-- Please choose --")%>";
+			dl_closePanel(cbid,panel,listContainer,searchInput);
 		});
 
 		// 搜索功能
 		searchInput.addEventListener("input", function() {
-			lv_filterList(this.value, cbid, listContainer, hiddenSelect, searchInput);
-			lv_repositionPanel(panel, display);
+			dl_filterList(this.value, cbid, listContainer, searchInput);
+			dl_repositionPanel(panel, display);
 		});
 		searchInput.addEventListener('keydown', function(e) {
 			const isEnter = e.key === "Enter" || e.keyCode === 13;
@@ -650,12 +603,12 @@
 		});
 
 		// 切换组
-		listContainer.querySelectorAll(".lv-group-title").forEach(title => {
+		listContainer.querySelectorAll(".dl-group-title").forEach(title => {
 			title.addEventListener("click", function() {
-				const g = this.closest(".lv-group")?.getAttribute("data-group");
+				const g = this.closest(".dl-group")?.getAttribute("data-group");
 				if (g) {
-					lv_toggleGroup(listContainer, cbid, g);
-					lv_repositionPanel(panel, display);
+					dl_toggleGroup(listContainer, cbid, g);
+					dl_repositionPanel(panel, display);
 				}
 			});
 		});
@@ -680,77 +633,20 @@
 		}, { passive: false });
 	}
 
-	//截断display字符长度
-	window.lv_labelSpan_maxWidth = {};
-	function lv_ellipsisByWidth(cbid, text) {
-		const el = document.getElementById(cbid + ".label");
-		if (!el || !text) return text;
-		text = text.trim();
-		const maxWidth = el.clientWidth;
-		window.lv_labelSpan_maxWidth[cbid] = maxWidth;
-		if (maxWidth <= 0) return text;
-		const style = window.getComputedStyle(el);
-		const font = [
-			style.fontStyle,
-			style.fontVariant,
-			style.fontWeight,
-			style.fontSize || '16px',
-			style.fontFamily || 'sans-serif'
-		].join(" ").replace(/\s+/g, ' ');
-		const canvas = lv_ellipsisByWidth._canvas || (lv_ellipsisByWidth._canvas = document.createElement("canvas"));
-		const ctx = canvas.getContext("2d");
-		ctx.font = font;
-		if (ctx.measureText(text).width <= maxWidth) {
-			return text;
-		}
-		const ellipsis = "...";
-		const ellipsisWidth = ctx.measureText(ellipsis).width;
-		const minChars = 15;
-		const probe = text.slice(0, minChars);
-		const probeWidth = ctx.measureText(probe).width;
-		if (probeWidth + ellipsisWidth > maxWidth) {
-			return text;
-		}
-		let left = 0;
-		let right = text.length;
-		let result = ellipsis;
-		while (left <= right) {
-			const mid = (left + right) >> 1;
-			const substr = text.slice(0, mid);
-			const w = ctx.measureText(substr).width;
-			if (w + ellipsisWidth <= maxWidth) {
-				result = substr + ellipsis;
-				left = mid + 1;
-			} else {
-				right = mid - 1;
-			}
-		}
-		return result;
+	const dl_adaptiveControls = new Set();
+	function dl_registerAdaptive(cbid) {
+		dl_adaptiveControls.add(cbid);
+		dl_adaptiveStyle(cbid);
 	}
-
-	const lv_adaptiveControls = new Set();
-	function lv_registerAdaptive(cbid) {
-		lv_adaptiveControls.add(cbid);
-		lv_adaptiveStyle(cbid);
-	}
-	function lv_labelSpanResize(cbid) {
-		const el = document.getElementById(cbid + ".label");
-		if (!el) return;
-		const maxWidth = el.clientWidth;
-		if (window.lv_labelSpan_maxWidth[cbid] == maxWidth) return;
-		let text = el.title;
-		el.textContent = lv_ellipsisByWidth(cbid, text);
-	}
-	let lv_adaptiveTicking = false;
+	let dl_adaptiveTicking = false;
 	window.addEventListener("resize", () => {
-		if (!lv_adaptiveTicking) {
-			lv_adaptiveTicking = true;
+		if (!dl_adaptiveTicking) {
+			dl_adaptiveTicking = true;
 			requestAnimationFrame(() => {
-				lv_adaptiveControls.forEach(cbid => {
-					lv_adaptiveStyle(cbid);
-					lv_labelSpanResize(cbid);
+				dl_adaptiveControls.forEach(cbid => {
+					dl_adaptiveStyle(cbid);
 				});
-				lv_adaptiveTicking = false;
+				dl_adaptiveTicking = false;
 			});
 		}
 	});

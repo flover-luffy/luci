@@ -5,6 +5,12 @@ APP_FILE=${APP_PATH}/app.sh
 
 flag=0
 
+check_process() {
+	while busybox pgrep -af "${CONFIG}/" | grep -E 'app\.sh.*(start|stop)|nftables\.sh|iptables\.sh|subscribe\.lua' >/dev/null; do
+		sleep 6s
+	done
+}
+
 test_url() {
 	local url=$1
 	local try=1
@@ -48,15 +54,16 @@ test_node() {
 	local node_id=$1
 	local _type=$(echo $(config_n_get ${node_id} type) | tr 'A-Z' 'a-z')
 	[ -n "${_type}" ] && {
+		check_process
 		local _tmp_port=$(get_new_port 48800 tcp,udp)
-		$APP_FILE run_socks flag="test_node_${node_id}" node=${node_id} bind=127.0.0.1 socks_port=${_tmp_port} config_file=test_node_${node_id}.json
+		NO_REC_PROCESS=1 $APP_FILE run_socks flag="test_node_${node_id}" node=${node_id} bind=127.0.0.1 socks_port=${_tmp_port} config_file=test_node_${node_id}.json
+		sleep 2s
 		local curlx="socks5h://127.0.0.1:${_tmp_port}"
-		sleep 1s
 		local _proxy_status=$(test_url "${probe_url}" ${retry_num} ${connect_timeout} "-x $curlx")
 		# 结束 SS 插件进程
 		local pid_file="/tmp/etc/${CONFIG}/test_node_${node_id}_plugin.pid"
 		[ -s "$pid_file" ] && kill -9 "$(head -n 1 "$pid_file")" >/dev/null 2>&1
-		pgrep -af "test_node_${node_id}" | awk '! /socks_auto_switch\.sh/{print $1}' | xargs kill -9 >/dev/null 2>&1
+		busybox pgrep -af "test_node_${node_id}" | awk '! /socks_auto_switch\.sh/{print $1}' | xargs kill -9 >/dev/null 2>&1
 		rm -rf /tmp/etc/${CONFIG}/test_node_${node_id}*.*
 		if [ "${_proxy_status}" -eq 200 ]; then
 			return 0
@@ -92,11 +99,12 @@ test_auto_switch() {
 	if [ "$restore_switch" = "1" ] && [ -n "$main_node" ] && [ "$now_node" != "$main_node" ]; then
 		test_node ${main_node}
 		[ $? -eq 0 ] && {
+			check_process
 			#主节点正常，切换到主节点
-			echolog "Socks切换检测：${id}主节点【$(config_n_get $main_node type)：[$(config_n_get $main_node remarks)]】正常，切换到主节点！"
-			$APP_FILE socks_node_switch flag=${id} new_node=${main_node}
+			echolog "Socks切换检测：端口[${socks_port}] 主节点【$(config_n_get $main_node type)：[$(config_n_get $main_node remarks)]】正常，切换到主节点！"
+			NO_REC_PROCESS=1 $APP_FILE socks_node_switch flag=${id} new_node=${main_node}
 			[ $? -eq 0 ] && {
-				echolog "Socks切换检测：${id}节点切换完毕！"
+				echolog "Socks切换检测：端口[${socks_port}] 节点切换完毕！"
 			}
 			return 0
 		}
@@ -117,24 +125,24 @@ test_auto_switch() {
 			done
 			# 如果没找到当前节点，或者当前节点是最后一个，就取第一个节点
 			[ -z "$new_node" ] && new_node="$first_node"
-			msg="切换到$([ "$now_node" = "$main_node" ] && echo 备用节点 || echo 下一个备用节点)检测！"
+			if [ "$new_node" = "$main_node" ]; then
+				msg="切换到主节点检测！"
+			else
+				msg="切换到$([ "$now_node" = "$main_node" ] && echo 备用节点 || echo 下一个备用节点)检测！"
+			fi
 		else
 			# 只有一个后备节点时，与主节点轮询
 			new_node=$([ "$now_node" = "$main_node" ] && echo "$b_nodes" || echo "$main_node")
 			msg="切换到$([ "$now_node" = "$main_node" ] && echo 备用节点 || echo 主节点)检测！"
 		fi
-		echolog "Socks切换检测：${id}【$(config_n_get $now_node type)：[$(config_n_get $now_node remarks)]】异常，$msg"
+		echolog "Socks切换检测：端口[${socks_port}]【$(config_n_get $now_node type)：[$(config_n_get $now_node remarks)]】异常，$msg"
 		test_node ${new_node}
 		if [ $? -eq 0 ]; then
-#			[ "$restore_switch" = "0" ] && {
-#				uci set $CONFIG.${id}.node=$new_node
-#				[ -z "$(echo $b_nodes | grep $main_node)" ] && uci add_list $CONFIG.${id}.autoswitch_backup_node=$main_node
-#				uci commit $CONFIG
-#			}
-			echolog "Socks切换检测：${id}【$(config_n_get $new_node type)：[$(config_n_get $new_node remarks)]】正常，切换到此节点！"
-			$APP_FILE socks_node_switch flag=${id} new_node=${new_node}
+			check_process
+			echolog "Socks切换检测：端口[${socks_port}]【$(config_n_get $new_node type)：[$(config_n_get $new_node remarks)]】正常，切换到此节点！"
+			NO_REC_PROCESS=1 $APP_FILE socks_node_switch flag=${id} new_node=${new_node}
 			[ $? -eq 0 ] && {
-				echolog "Socks切换检测：${id}节点切换完毕！"
+				echolog "Socks切换检测：端口[${socks_port}] 节点切换完毕！"
 			}
 			return 0
 		else
@@ -155,14 +163,19 @@ start() {
 	retry_num=$(config_n_get $id autoswitch_retry_num 1)
 	restore_switch=$(config_n_get $id autoswitch_restore_switch 0)
 	probe_url=$(config_n_get $id autoswitch_probe_url "https://www.google.com/generate_204")
-	backup_node=$(config_n_get $id autoswitch_backup_node)
+	backup_node=$(lua_api "get_socks_backup_nodes(\"${id}\")")
 	if [ -n "$backup_node" ]; then
-		backup_node=$(echo "$backup_node" | tr -s ' ' '\n' | uniq | tr -s '\n' ' ')
 		backup_node_num=$(printf "%s\n" "$backup_node" | wc -w)
+		echolog "  - Socks切换检测：端口[${socks_port}] 后备节点数量：${backup_node_num}"
 		if [ "$backup_node_num" -eq 1 ]; then
 			[ "$main_node" = "$backup_node" ] && return
+		elif [ "$backup_node_num" -gt 1 ]; then
+			[ "$restore_switch" != "1" ] && {
+				[ -z "$(echo $backup_node | grep -F "$main_node")" ] && backup_node="${backup_node} ${main_node}"
+			}
 		fi
 	else
+		echolog "  - Socks切换检测：端口[${socks_port}] 后备节点数量：0"
 		return
 	fi
 	while [ -n "$backup_node" ]; do
@@ -170,11 +183,7 @@ start() {
 			sleep 6s
 			continue
 		}
-		pgrep -af "${CONFIG}/" | awk '/app\.sh.*(start|stop)/ || /nftables\.sh/ || /iptables\.sh/ { found = 1 } END { exit !found }' && {
-			# 特定任务执行中不检测
-			sleep 6s
-			continue
-		}
+		check_process
 		touch $LOCK_FILE
 		test_auto_switch "$backup_node"
 		rm -f $LOCK_FILE
