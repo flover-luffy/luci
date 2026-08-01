@@ -6,11 +6,12 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=luci-app-https-dns-proxy
 PKG_LICENSE:=AGPL-3.0-or-later
 PKG_MAINTAINER:=Stan Grishin <stangri@melmac.ca>
-PKG_VERSION:=2025.12.29
-PKG_RELEASE:=4
+PKG_VERSION:=2026.07.21
+PKG_RELEASE:=1
+PKG_CPE_ID:=cpe:/a:mossdef:luci-app-https-dns-proxy
 
 LUCI_TITLE:=DNS Over HTTPS Proxy Web UI
-LUCI_URL:=https://github.com/mossdef-org/luci-app-https-dns-proxy/
+LUCI_URL:=https://docs.mossdef.org/https-dns-proxy/
 LUCI_DESCRIPTION:=Provides Web UI for DNS Over HTTPS Proxy
 LUCI_DEPENDS:=+luci-base +https-dns-proxy
 

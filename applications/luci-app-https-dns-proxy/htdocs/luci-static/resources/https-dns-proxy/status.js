@@ -18,7 +18,7 @@ var pkg = {
 	},
 	get URL() {
 		return (
-			"https://docs.openwrt.melmac.ca/" +
+			"https://docs.mossdef.org/" +
 			pkg.Name +
 			"/" +
 			(pkg.ReadmeCompat ? pkg.ReadmeCompat + "/" : "")
@@ -26,7 +26,7 @@ var pkg = {
 	},
 	get DonateURL() {
 		return (
-			"https://docs.openwrt.melmac.ca/" +
+			"https://docs.mossdef.org/" +
 			pkg.Name +
 			"/" +
 			(pkg.ReadmeCompat ? pkg.ReadmeCompat + "/" : "") +
@@ -52,6 +52,12 @@ var pkg = {
 	templateToResolver: function (template, args) {
 		if (template) return template.replace(/{(\w+)}/g, (_, v) => args[v]);
 		return null;
+	},
+	// HTML-escape an untrusted scalar value with LuCI's %h format specifier so
+	// config-derived text (listen address, resolver URL) reflected into status
+	// cannot inject markup when appended via innerHTML by E()/dom.create.
+	escapeInfo: function (info) {
+		return info != null && info !== "" ? "%h".format(info) : info;
 	},
 };
 
@@ -211,7 +217,7 @@ var status = baseclass.extend({
 			} else {
 				text = _("Not installed or not found");
 			}
-			var statusText = E("output", { id: pkg.Name + "-status", class: "cbi-value-description" }, text);
+			var statusText = E("output", { id: pkg.Name + "-status" }, text);
 			var statusField = E("div", { class: "cbi-value-field" }, statusText);
 			var statusDiv = E("div", { class: "cbi-value" }, [
 				statusTitle,
@@ -225,14 +231,6 @@ var status = baseclass.extend({
 					{ class: "cbi-value-title", for: pkg.Name + "-instances" },
 					_("Service Instances")
 				);
-				text = _("See the %sREADME%s for details.").format(
-					'<a href="' +
-					pkg.URL +
-					'#a-word-about-default-routing " target="_blank">',
-					"</a>"
-				);
-				var instancesDescr = E("div", { class: "cbi-value-description" }, "");
-
 				text = "";
 				Object.values(reply.ubus.instances).forEach((element) => {
 					var resolver;
@@ -274,30 +272,32 @@ var status = baseclass.extend({
 					if (address === "127.0.0.1")
 						text += _("%s%s%s proxy on port %s.%s").format(
 							"<strong>",
-							name,
+							pkg.escapeInfo(name),
 							"</strong>",
-							port,
+							pkg.escapeInfo(port),
 							"<br />"
 						);
 					else
 						text += _("%s%s%s proxy at %s on port %s.%s").format(
 							"<strong>",
-							name,
+							pkg.escapeInfo(name),
 							"</strong>",
-							address,
-							port,
+							pkg.escapeInfo(address),
+							pkg.escapeInfo(port),
 							"<br />"
 						);
 				});
-				text +=
-					"<br />" +
-					_("Please %sdonate%s to support development of this project.").format(
+				var instancesText = E("output", { id: pkg.Name + "-instances" }, text);
+				var instancesDescr = E("div", { class: "cbi-value-description" },
+					_(
+						"Please %sdonate%s to support development of this project.",
+					).format(
 						"<a href='" + pkg.DonateURL + "' target='_blank'>",
-						"</a>"
-					);
-				var instancesText = E("output", { id: pkg.Name + "-instances", class: "cbi-value-description" }, text);
+						"</a>",
+					));
 				var instancesField = E("div", { class: "cbi-value-field" }, [
 					instancesText,
+					E("br"),
 					instancesDescr,
 				]);
 				instancesDiv = E("div", { class: "cbi-value" }, [
