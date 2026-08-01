@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-30 17:00+0200\n"
-"PO-Revision-Date: 2026-03-16 23:10+0000\n"
+"PO-Revision-Date: 2026-05-04 07:42+0000\n"
 "Last-Translator: Hyeonjeong Lee <h9101654@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsfirewall/ko/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:48
 msgid ""
@@ -138,24 +138,30 @@ msgstr "허용 - 주소 변환 사용 안 함"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:222
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:219
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:405
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:406
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:203
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:286
 msgid "Action"
 msgstr "동작"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:332
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:335
 msgid ""
 "Additional raw <em>iptables</em> arguments to classify zone destination "
 "traffic, e.g. <code>-p tcp --dport 443</code> to only match outbound HTTPS "
 "traffic."
 msgstr ""
+"영역 목적지 트래픽을 분류하기 위한 추가 <em>iptables</em> 인수를 직접 입력합"
+"니다. (예: 아웃바운드 HTTPS 트래픽만 일치 조건으로 하려면, <code>-p tcp --"
+"dport 443</code>)"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:322
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:325
 msgid ""
 "Additional raw <em>iptables</em> arguments to classify zone source traffic, "
 "e.g. <code>-p tcp --sport 443</code> to only match inbound HTTPS traffic."
 msgstr ""
+"영역 출발지 트래픽을 분류하기 위한 추가 <em>iptables</em> 인수를 직접 입력합"
+"니다. (예: 인바운드 HTTPS 트래픽만 일치 조건으로 하려면, <code>-p tcp --"
+"sport 443</code>)"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:107
 msgid "Address family, Internal IP address must match"
@@ -176,15 +182,15 @@ msgstr ""
 msgid "Advanced Settings"
 msgstr "고급 설정"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:281
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:284
 msgid "Allow \"invalid\" traffic"
 msgstr "\"비정상\" 트래픽 허용"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:395
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:398
 msgid "Allow forward from <em>source zones</em>:"
 msgstr "전달 허용 <em>출발지 영역</em>:"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:354
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:357
 msgid "Allow forward to <em>destination zones</em>:"
 msgstr "전달 허용 <em>목적지 영역</em>:"
 
@@ -192,8 +198,8 @@ msgstr "전달 허용 <em>목적지 영역</em>:"
 msgid "Any"
 msgstr "전체"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:481
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:497
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:483
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:499
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:353
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:369
 msgid "Any day"
@@ -205,26 +211,27 @@ msgid ""
 "established connections. Format is value[/mask]. If a mask is specified then "
 "those bits set in the mask are zeroed out."
 msgstr ""
-"기존 마크 값과 지정된 값을 비트 단위 XOR 연산하여 적용합니다. 형식은 값[/"
-"마스크]입니다. 마스크 사용 시, 지정된 비트를 먼저 0으로 초기화한 후 "
-"연산합니다."
+"기존 마크 값과 지정된 값을 비트 단위 XOR 연산하여 적용합니다. 형식은 값[/마스"
+"크]입니다. 마스크 사용 시, 지정된 비트를 먼저 0으로 초기화한 후 연산합니다."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:263
 msgid "Apply the given DSCP class or value to established connections."
 msgstr "확립된 연결에 지정된 DSCP 클래스 또는 값을 적용합니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:433
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:435
 msgid "Assign the specified connection tracking helper to matched traffic."
-msgstr "일치하는 트래픽에 지정된 연결 추적(Connection Tracking) 헬퍼를 할당합니다."
+msgstr ""
+"일치하는 트래픽에 지정된 연결 추적(Connection Tracking) 헬퍼를 할당합니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:284
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:287
 msgid "Automatic helper assignment"
 msgstr "헬퍼 자동 할당"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:284
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:287
 msgid ""
 "Automatically assign conntrack helpers based on traffic protocol and port"
-msgstr "트래픽 프로토콜 및 포트를 기반으로 conntrack 헬퍼를 자동으로 할당합니다"
+msgstr ""
+"트래픽 프로토콜 및 포트를 기반으로 conntrack 헬퍼를 자동으로 할당합니다"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/ipsets.js:61
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/ipsets.js:62
@@ -235,7 +242,7 @@ msgstr "설명"
 msgid "Conntrack Settings"
 msgstr "Conntrack 설정"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:288
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:291
 msgid "Conntrack helpers"
 msgstr "Conntrack 헬퍼"
 
@@ -251,15 +258,15 @@ msgstr "계속"
 msgid "Counters"
 msgstr "카운터"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:229
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:232
 msgid "Covered devices"
 msgstr "소속 장치"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:182
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:185
 msgid "Covered networks"
 msgstr "소속 네트워크"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:234
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:237
 msgid "Covered subnets"
 msgstr "소속 서브넷"
 
@@ -277,7 +284,7 @@ msgstr ""
 "명령을 실행할 수 있습니다. 입력된 명령어들은 매 방화벽 재시작시 default "
 "ruleset을 불러온 직후 실행됩니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:415
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:417
 msgid "DSCP classification"
 msgstr "DSCP 분류"
 
@@ -289,32 +296,32 @@ msgstr "DSCP 마크"
 msgid "DSCP mark required"
 msgstr "DSCP 마크가 필요함"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:396
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:397
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:269
 msgid "Destination address"
 msgstr "목적지 주소"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:398
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:399
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:277
 msgid "Destination port"
 msgstr "목적지 포트"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:390
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:391
 msgid "Destination zone"
 msgstr "목적지 영역"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:263
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:264
 msgid "Device name"
 msgstr "장치 이름"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:281
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:284
 msgid ""
 "Do not install extra rules to reject forwarded traffic with conntrack state "
 "<em>invalid</em>. This may be required for complex asymmetric route setups."
 msgstr ""
-"연결 상태(conntrack state)가 <em>비정상(Invalid)</em>인 전달 트래픽을 "
-"거부하는 추가 규칙을 설치하지 않습니다. 복잡한 비대칭 경로 설정 시 필요할 수 "
-"있습니다."
+"연결 상태(conntrack state)가 <em>비정상(Invalid)</em>인 전달 트래픽을 거부하"
+"는 추가 규칙을 설치하지 않습니다. 복잡한 비대칭 경로 설정 시 필요할 수 있습니"
+"다."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:57
 msgid "Drop invalid packets"
@@ -335,13 +342,13 @@ msgid "Enable SYN-flood protection"
 msgstr "SYN-flood 방어 활성화"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:346
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:463
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:465
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:339
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:294
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:297
 msgid "Enable logging"
 msgstr "로그 기록 사용"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:167
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:170
 msgid ""
 "Enable network address and port translation IPv4 (NAT4 or NAPT4) for "
 "outbound traffic on this zone. This is typically enabled on the <em>wan</em> "
@@ -350,7 +357,7 @@ msgstr ""
 "이 영역의 아웃바운드 트래픽에 IPv4 네트워크 주소 및 포트 변환 (NAT4 또는 "
 "NAPT4)을 활성화합니다. 일반적으로 <em>wan</em> 영역에서 사용합니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:241
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:244
 msgid ""
 "Enable network address and port translation IPv6 (NAT6 or NAPT6) for "
 "outbound traffic on this zone."
@@ -370,11 +377,11 @@ msgstr "세트의 패킷 및 바이트 수 추적을 활성화합니다."
 msgid "Expecting: %s"
 msgstr "요구 사항: %s"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:288
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:291
 msgid "Explicitly choses allowed connection tracking helpers for zone traffic"
 msgstr ""
-"영역 트래픽에 허용할 연결 추적(Connection Tracking) 헬퍼를 명시적으로 "
-"선택합니다"
+"영역 트래픽에 허용할 연결 추적(Connection Tracking) 헬퍼를 명시적으로 선택합"
+"니다"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:272
 msgid "External IP address"
@@ -385,12 +392,12 @@ msgid "External port"
 msgstr "외부 포트"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:355
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:472
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:474
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:343
 msgid "Extra arguments"
 msgstr "추가 변수"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:332
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:335
 msgid "Extra destination arguments"
 msgstr "추가 목적지 인수"
 
@@ -398,7 +405,7 @@ msgstr "추가 목적지 인수"
 msgid "Extra iptables arguments"
 msgstr "iptables 추가 인수"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:322
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:325
 msgid "Extra source arguments"
 msgstr "추가 출발지 인수"
 
@@ -443,6 +450,7 @@ msgid "Flow offloading type"
 msgstr "플로우 오프로딩 방식"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:62
+msgctxt "firewall forward"
 msgid "Forward"
 msgstr "전달"
 
@@ -462,7 +470,7 @@ msgstr ""
 "data-tooltip=\"비교 전 fwmark 값을 %{mark.mask} 마스크 처리합니다.\"}}>%"
 "{mark.val}</var>}"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:487
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:489
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:359
 msgid "Friday"
 msgstr "금요일"
@@ -561,22 +569,22 @@ msgstr "IP/네트워크/MAC"
 msgid "IPv4"
 msgstr "IPv4"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:166
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:169
 msgid "IPv4 Masquerading"
 msgstr "IPv4 마스커레이딩"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:189
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/ipsets.js:68
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:274
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:275
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:218
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:254
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:257
 msgid "IPv4 and IPv6"
 msgstr "IPv4 및 IPv6"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:190
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:275
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:276
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:219
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:255
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:258
 msgid "IPv4 only"
 msgstr "IPv4 전용"
 
@@ -584,18 +592,18 @@ msgstr "IPv4 전용"
 msgid "IPv6"
 msgstr "IPv6"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:240
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:243
 msgid "IPv6 Masquerading"
 msgstr "IPv6 마스커레이딩"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:191
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:276
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:277
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:220
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:256
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:259
 msgid "IPv6 only"
 msgstr "IPv6 전용"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:246
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:247
 msgid "Inbound device"
 msgstr "인바운드 장치"
 
@@ -633,6 +641,7 @@ msgstr "초기 해시 크기"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:60
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:150
+msgctxt "firewall input"
 msgid "Input"
 msgstr "입력"
 
@@ -665,8 +674,8 @@ msgid "Limit burst"
 msgstr "버스트 크기"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:349
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:466
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:309
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:468
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:312
 msgid "Limit log messages"
 msgstr "로그 메시지 제한"
 
@@ -684,8 +693,8 @@ msgstr ""
 "일치 패킷 수를 <var>%{limit.unit}</var>당 <var>%{limit.num}</var> 패킷%"
 "{limit.burst? (버스트 <var>%{limit.burst}</var>)}으로 제한"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:174
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:248
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:177
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:251
 msgid "Limited masquerading enabled"
 msgstr "제한적 마스커레이딩 활성화됨"
 
@@ -693,12 +702,12 @@ msgstr "제한적 마스커레이딩 활성화됨"
 msgid "Limits traffic matching to the specified rate."
 msgstr "트래픽 매칭을 지정된 속도로 제한합니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:294
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:297
 msgid "Log matched packets on the selected tables to syslog."
 msgstr "선택한 테이블의 일치하는 패킷을 syslog에 기록합니다."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:346
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:463
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:465
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:339
 msgid "Log matched packets to syslog."
 msgstr "일치하는 패킷을 syslog에 기록합니다."
@@ -711,7 +720,7 @@ msgstr "루프백 출발지 IP"
 msgid "MASQUERADE - Automatically rewrite to outbound interface IP"
 msgstr "마스커레이딩 - 아웃바운드 인터페이스 IP로 자동 변환"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:179
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:182
 msgid "MSS clamping"
 msgstr "MSS 클램핑"
 
@@ -725,11 +734,11 @@ msgstr "일치 조건"
 msgid "Match DSCP"
 msgstr "DSCP 일치 조건"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:287
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:288
 msgid "Match ICMP type"
 msgstr "ICMP 유형 일치 조건"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:243
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:244
 msgid "Match device"
 msgstr "장치 일치 조건"
 
@@ -741,8 +750,8 @@ msgstr "지정된 IP 주소로 전달되는 트래픽을 일치 대상으로 설
 msgid ""
 "Match forwarded traffic directed at the given destination port or port range."
 msgstr ""
-"지정된 목적지 포트 또는 포트 범위로 향하는 전달 트래픽을 일치 대상으로 "
-"설정합니다."
+"지정된 목적지 포트 또는 포트 범위로 향하는 전달 트래픽을 일치 대상으로 설정합"
+"니다."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:253
 msgid "Match forwarded traffic from this IP or range."
@@ -752,11 +761,11 @@ msgstr "해당 IP 또는 대역에서 전달되는 트래픽을 일치 대상으
 msgid ""
 "Match forwarded traffic originating from the given source port or port range."
 msgstr ""
-"지정된 출발지 포트 또는 포트 범위를 사용하는 전달 트래픽을 일치 대상으로 "
-"설정합니다."
+"지정된 출발지 포트 또는 포트 범위를 사용하는 전달 트래픽을 일치 대상으로 설정"
+"합니다."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:324
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:440
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:442
 msgid "Match helper"
 msgstr "헬퍼 일치 조건"
 
@@ -764,14 +773,16 @@ msgstr "헬퍼 일치 조건"
 msgid ""
 "Match incoming traffic directed at the given destination port or port range "
 "on this host"
-msgstr "호스트의 특정 목적지 포트 또는 포트 범위로 들어오는 트래픽을 매칭합니다"
+msgstr ""
+"호스트의 특정 목적지 포트 또는 포트 범위로 들어오는 트래픽을 일치 대상으로 설"
+"정합니다"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:315
 msgid "Match mark"
 msgstr "마크 일치 조건"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:324
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:440
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:442
 msgid "Match traffic using the specified connection tracking helper."
 msgstr ""
 "지정된 연결 추적(Connection Tracking) 헬퍼를 사용하는 트래픽을 일치 대상으로 "
@@ -784,8 +795,8 @@ msgstr "특정 방화벽 마크 또는 지정된 범위의 마크를 일치 대�
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:330
 msgid "Matches forwarded traffic using the specified outbound network device."
 msgstr ""
-"지정된 아웃바운드 네트워크 장치를 사용하는 전달 트래픽을 일치 대상으로 "
-"설정합니다."
+"지정된 아웃바운드 네트워크 장치를 사용하는 전달 트래픽을 일치 대상으로 설정합"
+"니다."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:263
 msgid "Matches traffic carrying the specified DSCP marking."
@@ -807,12 +818,12 @@ msgstr ""
 "매칭 가능한 최대 초기 패킷 수입니다. 위에서 설정한 제한 수치에 도달하지 않을 "
 "때마다 패킷이 하나씩 재충전되며, 이 설정값까지 유지됩니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:483
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:485
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:355
 msgid "Monday"
 msgstr "월요일"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:493
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:495
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:365
 msgid "Month Days"
 msgstr "매월 일자"
@@ -867,10 +878,10 @@ msgid ""
 "Only match incoming traffic originating from the given source port or port "
 "range on the client host"
 msgstr ""
-"클라이언트 호스트의 특정 출발지 포트나 범위에서 시작된 트래픽만 일치 "
-"대상으로 설정합니다"
+"클라이언트 호스트의 특정 출발지 포트나 범위에서 시작된 트래픽만 일치 대상으"
+"로 설정합니다"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:247
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:248
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:329
 msgid "Outbound device"
 msgstr "아웃바운드 장치"
@@ -881,6 +892,7 @@ msgstr "아웃바운드 영역"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:61
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:151
+msgctxt "firewall output"
 msgid "Output"
 msgstr "출력"
 
@@ -895,19 +907,19 @@ msgid ""
 "Datatypes: <code>ip, port, mac, net, set</code>.<br />Direction prefixes are "
 "optional.<br />*Note: datatype <code>set</code> is unsupported in fw4."
 msgstr ""
-"일치 여부를 확인할 패킷 필드를 설정합니다.<br />입력 형식: <em>"
-"방향_데이터유형</em>. 예: <code>src_port, dest_net</code>.<br />방향: <code>"
-"src, dst</code>. 데이터 유형: <code>ip, port, mac, net, set</code>.<br />"
-"방향 접두사는 선택 사항입니다.<br />*주의: <code>set</code> 유형은 fw4에서 "
-"지원되지 않습니다."
+"일치 여부를 확인할 패킷 필드를 설정합니다.<br />입력 형식: <em>방향_데이터유"
+"형</em>. 예: <code>src_port, dest_net</code>.<br />방향: <code>src, dst</"
+"code>. 데이터 유형: <code>ip, port, mac, net, set</code>.<br />방향 접두사는 "
+"선택 사항입니다.<br />*주의: <code>set</code> 유형은 fw4에서 지원되지 않습니"
+"다."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:356
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:473
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:475
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:344
 msgid "Passes additional arguments to iptables. Use with care!"
 msgstr "iptables 명령에 추가 변수들을 전달합니다. 주의하여 사용하세요!"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:319
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:322
 msgid ""
 "Passing raw iptables arguments to source and destination traffic "
 "classification rules allows to match packets based on other criteria than "
@@ -915,6 +927,10 @@ msgid ""
 "invalid values could render the firewall ruleset broken, completely exposing "
 "all services."
 msgstr ""
+"출발지 및 목적지 트래픽 분류 규칙에 iptables 인수를 직접 전달하면, 인터페이스"
+"나 서브넷 이외의 기준으로 패킷을 대조(Matching)할 수 있습니다. 이 값을 잘못 "
+"설정하면 방화벽 규칙 세트가 손상될 수 있습니다. 모든 서비스를 외부에 완전히 "
+"노출시킬 위험이 있으므로 각별히 주의해서 사용해야 합니다."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/ipsets.js:189
 msgid "Path to file of CIDRs, subnets, host IPs, etc.<br />"
@@ -938,7 +954,7 @@ msgid "Port range"
 msgstr "포트 범위"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:235
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:283
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:284
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:241
 msgid "Protocol"
 msgstr "프로토콜"
@@ -958,24 +974,24 @@ msgstr "외부 세트 참조"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:318
 msgid "Reflection zones"
-msgstr ""
+msgstr "리플렉션 영역"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:83
 msgid "Requires hardware NAT support."
 msgstr "하드웨어 NAT 지원이 필요합니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:270
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:273
 msgid "Restrict Masquerading to given destination subnets"
 msgstr "마스커레이딩 대상을 지정된 목적지 서브넷으로 제한"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:259
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:262
 msgid "Restrict Masquerading to given source subnets"
 msgstr "마스커레이딩 대상을 지정된 출발지 서브넷으로 제한"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:186
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:271
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:272
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:215
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:253
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:256
 msgid "Restrict to address family"
 msgstr "주소 체계 제한"
 
@@ -1003,7 +1019,7 @@ msgstr "라우팅/NAT 오프로딩"
 msgid "SNAT - Rewrite to specific source IP or port"
 msgstr "SNAT - 특정 출발지 IP 또는 포트로 변환"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:488
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:490
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:360
 msgid "Saturday"
 msgstr "토요일"
@@ -1033,27 +1049,27 @@ msgid "Source IP address"
 msgstr "출발지 IP 주소"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:253
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:380
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:381
 msgid "Source MAC address"
 msgstr "출발지 MAC 주소"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:381
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:382
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:252
 msgid "Source address"
 msgstr "출발지 주소"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:263
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:383
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:384
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:260
 msgid "Source port"
 msgstr "출발지 포트"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:239
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:366
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:367
 msgid "Source zone"
 msgstr "출발지 영역"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:264
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:265
 msgid ""
 "Specifies whether to tie this traffic rule to a specific inbound or outbound "
 "network device."
@@ -1067,22 +1083,22 @@ msgid ""
 "reflected traffic."
 msgstr "루프백(Reflected) 트래픽에 사용할 IP 유형(외부/내부)을 지정합니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:512
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:514
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:384
 msgid "Start Date (yyyy-mm-dd)"
 msgstr "시작 날짜 (yyyy-mm-dd)"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:504
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:506
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:376
 msgid "Start Time (hh:mm:ss)"
 msgstr "시작 시간 (hh:mm:ss)"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:516
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:518
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:388
 msgid "Stop Date (yyyy-mm-dd)"
 msgstr "종료 날짜 (yyyy-mm-dd)"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:508
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:510
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:380
 msgid "Stop Time (hh:mm:ss)"
 msgstr "종료 시간 (hh:mm:ss)"
@@ -1091,7 +1107,7 @@ msgstr "종료 시간 (hh:mm:ss)"
 msgid "Storage Method"
 msgstr "저장 방식"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:482
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:484
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:354
 msgid "Sunday"
 msgstr "일요일"
@@ -1110,8 +1126,8 @@ msgstr ""
 "방화벽은 네트워크 인터페이스를 영역(Zone)으로 묶어 네트워크 트래픽 흐름을 제"
 "어합니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:225
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:350
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:228
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:353
 msgid ""
 "The options below control the forwarding policies between this zone (%s) and "
 "other zones. <em>Destination zones</em> cover forwarded traffic "
@@ -1140,7 +1156,7 @@ msgstr ""
 "내 서로 다른 네트워크 간 전달 트래픽 정책을 정의합니다. <em>포함 네트워크</"
 "em>는 이 영역에 속할 네트워크를 지정합니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:486
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:488
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:358
 msgid "Thursday"
 msgstr "목요일"
@@ -1150,12 +1166,12 @@ msgstr "목요일"
 msgid "Time Restrictions"
 msgstr "시간 제한"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:520
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:522
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:392
 msgid "Time in UTC"
 msgstr "UTC 시각 사용"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:238
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:239
 msgid "Time restrictions are enabled for this rule"
 msgstr "규칙에 시간 제한 적용됨"
 
@@ -1203,7 +1219,7 @@ msgstr ""
 "{dest_port?, 포트 %{dest_port#%{next?, }<var%{item.inv? data-tooltip=\"%"
 "{item.val} 제외 포트와 매칭합니다.\"}>%{item.ival}</var>}}"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:433
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:435
 msgid "Tracking helper"
 msgstr "추적 헬퍼"
 
@@ -1222,7 +1238,7 @@ msgstr ""
 "다. 예를 들어 특정 호스트 간의 통신을 차단하거나 라우터의 WAN 포트를 개방할 "
 "수 있습니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:484
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:486
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:356
 msgid "Tuesday"
 msgstr "화요일"
@@ -1236,11 +1252,11 @@ msgid ""
 "Unit: seconds. Default <code>0</code> means the entry is added permanently "
 "to the set.<br />Max: 2147483 seconds."
 msgstr ""
-"단위: 초. 기본값 <code>0</code>은 항목이 세트에 영구적으로 추가됨을 "
-"의미합니다.<br />최대: 2147483초."
+"단위: 초. 기본값 <code>0</code>은 항목이 세트에 영구적으로 추가됨을 의미합니"
+"다.<br />최대: 2147483초."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:339
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:455
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:457
 msgid "Unknown or not installed conntrack helper \"%s\""
 msgstr "알 수 없거나 설치되지 않은 conntrack 헬퍼 \"%s\""
 
@@ -1273,8 +1289,8 @@ msgid ""
 "be converted to \"nat\" sections and the firewall will be restarted to apply "
 "the updated configuration."
 msgstr ""
-"\"계속\"을 누르면 대상이 \"SNAT\"인 \"redirect\" 섹션이 \"nat\" 섹션으로 "
-"변환되며, 업데이트된 설정을 적용하기 위해 방화벽이 재시작됩니다."
+"\"계속\"을 누르면 대상이 \"SNAT\"인 \"redirect\" 섹션이 \"nat\" 섹션으로 변환"
+"되며, 업데이트된 설정을 적용하기 위해 방화벽이 재시작됩니다."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:313
 msgid "Use external IP address"
@@ -1285,40 +1301,42 @@ msgid "Use internal IP address"
 msgstr "내부 IP 주소 사용"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:245
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:372
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:373
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:320
 msgid "Use ipset"
 msgstr "사용 IP 세트"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:229
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:232
 msgid ""
 "Use this option to classify zone traffic by raw, non-<em>uci</em> managed "
 "network devices."
 msgstr ""
+"<em>uci</em>로 관리되지 않는 네트워크 장치를 통해 직접 영역 트래픽을 분류하려"
+"면 이 옵션을 사용합니다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:234
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:237
 msgid ""
 "Use this option to classify zone traffic by source or destination subnet "
 "instead of networks or devices."
 msgstr ""
-"네트워크나 장치 대신 출발지 또는 목적지 서브넷을 기준으로 영역 트래픽을 "
-"분류합니다."
+"네트워크나 장치 대신 출발지 또는 목적지 서브넷을 기준으로 영역 트래픽을 분류"
+"합니다."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:330
 msgid "Valid firewall mark required"
 msgstr "유효한 방화벽 마크가 필요함"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:485
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:487
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:357
 msgid "Wednesday"
 msgstr "수요일"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:477
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:479
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:349
 msgid "Week Days"
 msgstr "요일"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:414
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:416
 msgid "XOR firewall mark"
 msgstr "방화벽 마크 XOR"
 
@@ -1347,8 +1365,10 @@ msgid ""
 "Zones from which reflection rules shall be created. If unset, only the "
 "destination zone is used."
 msgstr ""
+"리플렉션 규칙을 생성할 영역을 지정합니다. 미지정 시, 목적지 영역만 사용됩니"
+"다."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:409
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:411
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:68
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:158
 msgid "accept"
@@ -1360,10 +1380,10 @@ msgstr "허용"
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:268
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:299
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:326
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:386
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:401
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:435
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:442
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:387
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:402
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:437
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:444
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:265
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:281
 msgid "any"
@@ -1378,15 +1398,15 @@ msgstr "전체"
 msgid "any zone"
 msgstr "모든 영역"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:292
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:293
 msgid "any/all"
 msgstr "임의/전체"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:413
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:415
 msgid "apply firewall mark"
 msgstr "방화벽 마크 적용"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:412
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:414
 msgid "assign conntrack helper"
 msgstr "conntrack 헬퍼 할당"
 
@@ -1433,11 +1453,11 @@ msgstr "dest_set: 목적지 IP 세트*"
 msgid "do not rewrite"
 msgstr "변환 안 함"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:411
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:413
 msgid "don't track"
 msgstr "추적 안 함"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:408
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:410
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:67
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:157
 msgid "drop"
@@ -1478,7 +1498,7 @@ msgstr "IP[/CIDR]<br />"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/ipsets.js:146
 msgid "ip[/cidr]<br />For use with Match datatypes: <code>*_ip</code>."
-msgstr ""
+msgstr "ip[/cidr]<br />데이터유형 일치 조건과 함께 사용 시: <code>*_ip</code>."
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/ipsets.js:134
 msgid "list"
@@ -1506,7 +1526,7 @@ msgstr "net: (서브)넷"
 msgid "port: Port"
 msgstr "port: 포트"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:410
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:412
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:66
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:156
 msgid "reject"
@@ -1552,8 +1572,8 @@ msgid "this device"
 msgstr "이 장치"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:123
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:224
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:349
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:227
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:352
 msgid "this new zone"
 msgstr "이 신규 영역"
 
@@ -1561,7 +1581,7 @@ msgstr "이 신규 영역"
 msgid "unlimited"
 msgstr "무제한"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:245
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:246
 msgid "unspecified"
 msgstr "미지정"
 
@@ -1573,6 +1593,15 @@ msgstr "최대 65536개 엔트리."
 #: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:338
 msgid "valid firewall mark"
 msgstr "유효한 방화벽 마크"
+
+#~ msgid "Forward"
+#~ msgstr "전달"
+
+#~ msgid "Input"
+#~ msgstr "입력"
+
+#~ msgid "Output"
+#~ msgstr "출력"
 
 #~ msgid "Invalid set name"
 #~ msgstr "잘못된 세트 이름"

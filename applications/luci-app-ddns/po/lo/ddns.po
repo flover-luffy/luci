@@ -1,0 +1,895 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-05-02 19:29+0000\n"
+"Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
+"Language-Team: Lao <https://hosted.weblate.org/projects/openwrt/"
+"luciapplicationsddns/lo/>\n"
+"Language: lo\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:422
+msgid "\"../\" not allowed in path for Security Reason."
+msgstr "ບໍ່ອະນຸຍາດໃຫ້ໃຊ້ \"../\" ໃນເສັ້ນທາງເພື່ອເຫດຜົນດ້ານຄວາມປອດໄພ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:760
+msgid "A.k.a. the TOKEN at e.g. afraid.org"
+msgstr "ເອີ້ນອີກຢ່າງວ່າ TOKEN ເຊັ່ນ: ທີ່ afraid.org"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:457
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:525
+msgid "Add new services..."
+msgstr "ເພີ່ມບໍລິການໃໝ່..."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:604
+msgid "Advanced Settings"
+msgstr "ການຕັ້ງຄ່າຂັ້ນສູງ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:391
+msgid "Allow non-public IPs"
+msgstr "ອະນຸຍາດໃຫ້ໃຊ້ IP ທີ່ບໍ່ແມ່ນສາທາລະນະ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:603
+msgid "Basic Settings"
+msgstr "ການຕັ້ງຄ່າພື້ນຖານ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:901
+msgid "Bind Network"
+msgstr "ຜູກມັດກັບເຄືອຂ່າຍ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:331
+msgid "Binding to a specific network not supported"
+msgstr "ບໍ່ຮອງຮັບການຜູກມັດກັບເຄືອຂ່າຍສະເພາະ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:360
+msgid ""
+"BusyBox's nslookup and hostip do not support TCP instead of the default UDP "
+"when sending requests to the DNS server!"
+msgstr ""
+"nslookup ແລະ hostip ຂອງ BusyBox ບໍ່ຮອງຮັບການໃຊ້ TCP ແທນ UDP ຕາມຄ່າເລີ່ມຕົ້ນ "
+"ເວລາສົ່ງຄຳຮ້ອງຂໍໄປຍັງເຊີບເວີ DNS!"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:371
+msgid ""
+"BusyBox's nslookup in the current compiled version does not handle given DNS "
+"Servers correctly!"
+msgstr ""
+"nslookup ຂອງ BusyBox ໃນເວີຊັນທີ່ຄອມໄພລ໌ປະຈຸບັນ ຈັດການກັບເຊີບເວີ DNS ທີ່ກຳນົດໃຫ້ບໍ່ຖືກຕ້ອງ!"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:442
+msgid "CA cert bundle file"
+msgstr "ໄຟລ໌ລວມໃບຢັ້ງຢືນ CA"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:443
+msgid ""
+"CA certificate bundle file that will be used to download services data. Set "
+"IGNORE to skip certificate validation."
+msgstr ""
+"ໄຟລ໌ລວມໃບຢັ້ງຢືນ CA ທີ່ຈະໃຊ້ເພື່ອດາວໂຫຼດຂໍ້ມູນບໍລິການ. ຕັ້ງເປັນ IGNORE ເພື່ອຂ້າມການກວດສອບໃບຢັ້ງຢືນ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:531
+msgid "Cancel"
+msgstr "ຍົກເລີກ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:979
+msgid "Check Interval"
+msgstr "ໄລຍະຫ່າງໃນການກວດສອບ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:994
+msgid "Check Unit"
+msgstr "ຫົວໜ່ວຍການກວດສອບ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:27
+msgid "Configuration"
+msgstr "ການຕັ້ງຄ່າ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:225
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1132
+msgid "Configuration Error"
+msgstr "ການຕັ້ງຄ່າຜິດພາດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:416
+msgid "Contains Log files for each running section."
+msgstr "ບັນຈຸໄຟລ໌ບັນທຶກ (Log) ສຳລັບແຕ່ລະພາກສ່ວນທີ່ກຳລັງເຮັດວຽກ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:410
+msgid "Contains PID and other status information for each running section."
+msgstr "ບັນຈຸ PID ແລະ ຂໍ້ມູນສະຖານະອື່ນໆສຳລັບແຕ່ລະພາກສ່ວນທີ່ກຳລັງເຮັດວຽກ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:535
+msgid "Create service"
+msgstr "ສ້າງບໍລິການ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:404
+msgid "Current setting:"
+msgstr "ການຕັ້ງຄ່າປະຈຸບັນ:"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:208
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:275
+msgid "Currently DDNS updates are not started at boot or on interface events."
+msgstr "ປະຈຸບັນການອັບເດດ DDNS ບໍ່ໄດ້ເລີ່ມເຮັດວຽກຕອນເປີດເຄື່ອງ ຫຼື ເມື່ອມີເຫດການອິນເຕີເຟດເກີດຂຶ້ນ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:724
+msgid "Custom update script for updating your DDNS Provider."
+msgstr "ສະຄຣິບອັບເດດທີ່ກຳນົດເອງເພື່ອອັບເດດຜູ້ໃຫ້ບໍລິການ DDNS ຂອງທ່ານ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:705
+msgid "Custom update-URL"
+msgstr "URL ອັບເດດທີ່ກຳນົດເອງ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:723
+msgid "Custom update-script"
+msgstr "ສະຄຣິບອັບເດດທີ່ກຳນົດເອງ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:283
+msgid "DDNS"
+msgstr "DDNS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:206
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:278
+msgid "DDNS Autostart disabled"
+msgstr "ປິດການເລີ່ມຕົ້ນ DDNS ອັດຕະໂນມັດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:205
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:278
+msgid "DDNS Autostart enabled"
+msgstr "ເປີດການເລີ່ມຕົ້ນ DDNS ອັດຕະໂນມັດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:511
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:637
+msgid "DDNS Service provider"
+msgstr "ຜູ້ໃຫ້ບໍລິການ DDNS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:574
+msgid "DDns Service"
+msgstr "ບໍລິການ DDNS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:359
+msgid "DNS requests via TCP not supported"
+msgstr "ບໍ່ຮອງຮັບການຮ້ອງຂໍ DNS ຜ່ານ TCP"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:922
+msgid "DNS-Server"
+msgstr "DNS-ເຊີບເວີ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:400
+msgid "Date format"
+msgstr "ຮູບແບບວັນທີ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:850
+msgid "Defines the Web page to read systems IP-Address from."
+msgstr "ກຳນົດເວັບໄຊສ໌ເພື່ອອ່ານທີ່ຢູ່ IP ຂອງລະບົບ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:860
+msgid "Defines the interface to read systems IP-Address from"
+msgstr "ກຳນົດອິນເຕີເຟດເພື່ອອ່ານທີ່ຢູ່ IP ຂອງລະບົບ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:842
+msgid "Defines the network to read systems IP-Address from"
+msgstr "ກຳນົດເຄືອຂ່າຍເພື່ອອ່ານທີ່ຢູ່ IP ຂອງລະບົບ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:18
+msgid "Disabled"
+msgstr "ປິດໃຊ້ງານ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:745
+msgid "Domain"
+msgstr "ໂດເມນ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:259
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:7
+#: applications/luci-app-ddns/root/usr/share/luci/menu.d/luci-app-ddns.json:3
+msgid "Dynamic DNS"
+msgstr "Dynamic DNS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:266
+msgid "Dynamic DNS Version"
+msgstr "ເວີຊັນ Dynamic DNS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:544
+msgid "Edit"
+msgstr "ແກ້ໄຂ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:780
+msgid "Enable secure communication with DDNS provider"
+msgstr "ເປີດໃຊ້ການສື່ສານທີ່ປອດໄພກັບຜູ້ໃຫ້ບໍລິການ DDNS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:609
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1138
+msgid "Enabled"
+msgstr "ເປີດໃຊ້ງານ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:964
+msgid "Error"
+msgstr "ຄວາມຜິດພາດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1038
+msgid "Error Max Retry Counter"
+msgstr "ຈຳນວນຄັ້ງສູງສຸດທີ່ໃຫ້ລອງໃໝ່ເມື່ອເກີດຂໍ້ຜິດພາດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1048
+msgid "Error Retry Interval"
+msgstr "ໄລຍະຫ່າງໃນການລອງໃໝ່ເມື່ອເກີດຂໍ້ຜິດພາດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:874
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:885
+msgid "Event Network"
+msgstr "ເຄືອຂ່າຍເຫດການ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:852
+msgid "Example for IPv4"
+msgstr "ຕົວຢ່າງສຳລັບ IPv4"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:854
+msgid "Example for IPv6"
+msgstr "ຕົວຢ່າງສຳລັບ IPv6"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:973
+msgid "File"
+msgstr "ໄຟລ໌"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:708
+msgid "Follow instructions found on their WEB page."
+msgstr "ປະຕິບັດຕາມຄຳແນະນຳໃນເວັບໄຊສ໌ຂອງພວກເຂົາ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:402
+msgid "For supported codes look here"
+msgstr "ສຳລັບລະຫັດທີ່ຮອງຮັບໃຫ້ເບິ່ງທີ່ນີ້"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:913
+msgid "Force IP Version"
+msgstr "ບັງຄັບເວີຊັນ IP"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1003
+msgid "Force Interval"
+msgstr "ບັງຄັບໄລຍະຫ່າງ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:934
+msgid "Force TCP on DNS"
+msgstr "ບັງຄັບໃຊ້ TCP ກັບ DNS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1029
+msgid "Force Unit"
+msgstr "ບັງຄັບຫົວໜ່ວຍ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:946
+msgid "Format"
+msgstr "ຮູບແບບ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:925
+msgid "Format: IP or FQDN"
+msgstr "ຮູບແບບ: IP ຫຼື FQDN"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:338
+msgid ""
+"GNU Wget will use the IP of given network, cURL will use the physical "
+"interface."
+msgstr "GNU Wget ຈະໃຊ້ IP ຂອງເຄືອຂ່າຍທີ່ກຳນົດໃຫ້, cURL ຈະໃຊ້ physical interface."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:264
+msgid "Global Settings"
+msgstr "ການຕັ້ງຄ່າທົ່ວໄປ"
+
+#: applications/luci-app-ddns/root/usr/share/rpcd/acl.d/luci-app-ddns.json:3
+msgid "Grant access to ddns procedures"
+msgstr "ໃຫ້ສິດເຂົ້າເຖິງຂັ້ນຕອນການເຮັດວຽກຂອງ ddns"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:319
+msgid "HTTPS not supported"
+msgstr "ບໍ່ຮອງຮັບ HTTPS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:619
+msgid "Hostname/FQDN to validate, whether an IP update is necessary"
+msgstr "Hostname/FQDN ທີ່ຈະກວດສອບວ່າຈຳເປັນຕ້ອງອັບເດດ IP ຫຼື ບໍ່"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:803
+msgid "IP address source"
+msgstr "ແຫຼ່ງທີ່ມາຂອງທີ່ຢູ່ IP"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:502
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:626
+msgid "IP address version"
+msgstr "ເວີຊັນຂອງທີ່ຢູ່ IP"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:505
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:631
+msgid "IPv4-Address"
+msgstr "ທີ່ຢູ່ IPv4"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:948
+msgid "IPv6 address must be given in square brackets"
+msgstr "ທີ່ຢູ່ IPv6 ຕ້ອງໃສ່ໃນວົງເລັບກ້າມປູ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:310
+msgid "IPv6 is not supported by this system"
+msgstr "ລະບົບນີ້ບໍ່ຮອງຮັບ IPv6"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:309
+msgid "IPv6 not supported"
+msgstr "ບໍ່ຮອງຮັບ IPv6"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:507
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:633
+msgid "IPv6-Address"
+msgstr "ທີ່ຢູ່ IPv6"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:435
+msgid ""
+"If Wget and cURL package are installed, Wget is used for communication by "
+"default."
+msgstr "ຖ້າມີການຕິດຕັ້ງແພັກເກັດ Wget ແລະ cURL, Wget ຈະຖືກໃຊ້ໃນການສື່ສານຕາມຄ່າເລີ່ມຕົ້ນ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:610
+msgid "If this service section is disabled it will not be started."
+msgstr "ຖ້າພາກສ່ວນບໍລິການນີ້ຖືກປິດໃຊ້ງານ ມັນຈະບໍ່ຖືກເລີ່ມເຮັດວຽກ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:383
+msgid "If using secure communication you should verify server certificates!"
+msgstr "ຖ້າໃຊ້ການສື່ສານແບບປອດໄພ ທ່ານຄວນກວດສອບໃບຢັ້ງຢືນຂອງເຊີບເວີ!"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:324
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:340
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:352
+msgid ""
+"In some versions cURL/libcurl in OpenWrt is compiled without proxy support."
+msgstr "ໃນບາງເວີຊັນ cURL/libcurl ໃນ OpenWrt ຖືກຄອມໄພລ໌ໂດຍບໍ່ມີການຮອງຮັບພຣັອກຊີ (Proxy)."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:961
+msgid "Info"
+msgstr "ຂໍ້ມູນ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:263
+msgid "Information"
+msgstr "ຂໍ້ມູນ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:363
+msgid ""
+"Install 'bind-host' or 'knot-host' or 'drill' package if you know you need "
+"TCP for DNS requests."
+msgstr ""
+"ຕິດຕັ້ງແພັກເກັດ 'bind-host' ຫຼື 'knot-host' ຫຼື 'drill' ຖ້າທ່ານຮູ້ວ່າທ່ານຕ້ອງການ TCP "
+"ສຳລັບການຮ້ອງຂໍ DNS."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:385
+msgid ""
+"Install 'ca-certificates' package or needed certificates by hand into /etc/"
+"ssl/certs default directory"
+msgstr ""
+"ຕິດຕັ້ງແພັກເກັດ 'ca-certificates' ຫຼື ໃສ່ໃບຢັ້ງຢືນທີ່ຕ້ອງການດ້ວຍຕົນເອງໃນໄດເລກະທໍຣີ /etc/ssl/"
+"certs"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:667
+msgid "Install Service"
+msgstr "ຕິດຕັ້ງບໍລິການ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:809
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:859
+msgid "Interface"
+msgstr "ອິນເຕີເຟດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1004
+msgid "Interval to force an update at the DDNS Provider"
+msgstr "ໄລຍະຫ່າງໃນການບັງຄັບອັບເດດທີ່ຜູ້ໃຫ້ບໍລິການ DDNS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1030
+msgid "Interval unit for forced updates sent to DDNS Provider."
+msgstr "ຫົວໜ່ວຍໄລຍະຫ່າງສຳລັບການບັງຄັບອັບເດດທີ່ສົ່ງໄປຍັງຜູ້ໃຫ້ບໍລິການ DDNS."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:995
+msgid "Interval unit to check for changed IP"
+msgstr "ຫົວໜ່ວຍໄລຍະຫ່າງໃນການກວດສອບການປ່ຽນແປງ IP"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1143
+msgid "Last Update"
+msgstr "ອັບເດດຫຼ້າສຸດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:606
+msgid "Log File Viewer"
+msgstr "ເບິ່ງໄຟລ໌ບັນທຶກ (Log)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:415
+msgid "Log directory"
+msgstr "ໄດເລກະທໍຣີບັນທຶກ (Log)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:427
+msgid "Log length"
+msgstr "ຄວາມຍາວຂອງ Log"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:967
+msgid "Log to file"
+msgstr "ບັນທຶກລົງໄຟລ໌"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:955
+msgid "Log to syslog"
+msgstr "ບັນທຶກລົງ syslog"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:618
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1128
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:29
+msgid "Lookup Hostname"
+msgstr "ຄົ້ນຫາ Hostname"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:804
+msgid "Method used to determine the system IP-Address to send in updates"
+msgstr "ວິທີການທີ່ໃຊ້ເພື່ອກຳນົດທີ່ຢູ່ IP ຂອງລະບົບທີ່ຈະສົ່ງໃນການອັບເດດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:490
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1122
+msgid "Name"
+msgstr "ຊື່"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:332
+msgid ""
+"Neither GNU Wget with SSL nor cURL is installed to select a network to use "
+"for communication."
+msgstr "ບໍ່ໄດ້ຕິດຕັ້ງ GNU Wget ທີ່ມີ SSL ຫຼື cURL ເພື່ອເລືອກເຄືອຂ່າຍທີ່ໃຊ້ໃນການສື່ສານ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:320
+msgid ""
+"Neither GNU Wget with SSL nor cURL is installed to support secure updates "
+"via HTTPS protocol."
+msgstr "ບໍ່ໄດ້ຕິດຕັ້ງ GNU Wget ທີ່ມີ SSL ຫຼື cURL ເພື່ອຮອງຮັບການອັບເດດທີ່ປອດໄພຜ່ານໂປຣໂຕຄໍ HTTPS."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:612
+msgid "Neither from LuCI interface nor from console."
+msgstr "ບໍ່ແມ່ນຈາກອິນເຕີເຟດ LuCI ແລະ ບໍ່ແມ່ນຈາກຄອນໂຊນ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:807
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:841
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:31
+msgid "Network"
+msgstr "ເຄືອຂ່າຍ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:875
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:886
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:904
+msgid "Network on which the ddns-updater scripts will be started"
+msgstr "ເຄືອຂ່າຍທີ່ຈະເລີ່ມການເຮັດວຽກຂອງສະຄຣິບ ddns-updater"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:227
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1147
+msgid "Never"
+msgstr "ບໍ່ເຄີຍ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:493
+msgid "New DDns Service…"
+msgstr "ບໍລິການ DDNS ໃໝ່…"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1143
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:28
+msgid "Next Update"
+msgstr "ການອັບເດດຄັ້ງຕໍ່ໄປ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1143
+msgid "Next Verify"
+msgstr "ການກວດສອບຄັ້ງຕໍ່ໄປ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:226
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1133
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:40
+msgid "No Data"
+msgstr "ບໍ່ມີຂໍ້ມູນ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:382
+msgid "No certificates found"
+msgstr "ບໍ່ພົບໃບຢັ້ງຢືນ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:960
+msgid "No logging"
+msgstr "ບໍ່ມີການບັນທຶກ (Log)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:392
+msgid "Non-public and by default blocked IPs"
+msgstr "IPs ທີ່ບໍ່ແມ່ນສາທາລະນະ ແລະ ຖືກບລັອກໄວ້ຕາມຄ່າເລີ່ມຕົ້ນ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:230
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1119
+msgid "Not Running"
+msgstr "ບໍ່ໄດ້ເຮັດວຽກ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:962
+msgid "Notice"
+msgstr "ແຈ້ງການ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:428
+msgid "Number of last lines stored in log files"
+msgstr "ຈຳນວນແຖວລ່າສຸດທີ່ເກັບໄວ້ໃນໄຟລ໌ບັນທຶກ (Log)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:914
+msgid "OPTIONAL: Force the usage of pure IPv4/IPv6 only communication."
+msgstr "ທາງເລືອກ: ບັງຄັບການສື່ສານແບບ IPv4/IPv6 ເທົ່ານັ້ນ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:935
+msgid "OPTIONAL: Force the use of TCP instead of default UDP on DNS requests."
+msgstr "ທາງເລືອກ: ບັງຄັບໃຊ້ TCP ແທນ UDP ຕາມຄ່າເລີ່ມຕົ້ນໃນການຮ້ອງຂໍ DNS."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:902
+msgid "OPTIONAL: Network to use for communication"
+msgstr "ທາງເລືອກ: ເຄືອຂ່າຍທີ່ໃຊ້ສຳລັບການສື່ສານ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:944
+msgid "OPTIONAL: Proxy-Server for detection and updates."
+msgstr "ທາງເລືອກ: ພຣັອກຊີ-ເຊີບເວີ ສຳລັບການກວດສອບ ແລະ ອັບເດດ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:923
+msgid "OPTIONAL: Use non-default DNS-Server to detect 'Registered IP'."
+msgstr "ທາງເລືອກ: ໃຊ້ DNS-ເຊີບເວີ ທີ່ບໍ່ແມ່ນຄ່າເລີ່ມຕົ້ນ ເພື່ອກວດສອບ 'Registered IP'."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1039
+msgid ""
+"On Error the script will stop execution after the given number of retries."
+msgstr "ເມື່ອເກີດຂໍ້ຜິດພາດ ສະຄຣິບຈະຢຸດການເຮັດວຽກຫຼັງຈາກຈຳນວນຄັ້ງທີ່ລອງໃໝ່ທີ່ກຳນົດ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:766
+msgid "Optional Encoded Parameter"
+msgstr "ພາຣາມິເຕີແບບເຂົ້າລະຫັດ (ທາງເລືອກ)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:772
+msgid "Optional Parameter"
+msgstr "ພາຣາມິເຕີ (ທາງເລືອກ)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:767
+msgid "Optional: Replaces [PARAMENC] in Update-URL (URL-encoded)"
+msgstr "ທາງເລືອກ: ແທນທີ່ [PARAMENC] ໃນ Update-URL (URL-encoded)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:773
+msgid "Optional: Replaces [PARAMOPT] in Update-URL (NOT URL-encoded)"
+msgstr "ທາງເລືອກ: ແທນທີ່ [PARAMOPT] ໃນ Update-URL (ບໍ່ໄດ້ URL-encoded)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:943
+msgid "PROXY-Server"
+msgstr "PROXY-ເຊີບເວີ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:757
+msgid "Password"
+msgstr "ລະຫັດຜ່ານ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:785
+msgid "Path to CA-Certificate"
+msgstr "ເສັ້ນທາງໄປຫາໃບຢັ້ງຢືນ CA (CA-Certificate)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:311
+msgid ""
+"Please follow the instructions on OpenWrt's homepage to enable IPv6 support"
+msgstr "ກະລຸນາປະຕິບັດຕາມຄຳແນະນຳໃນໜ້າຫຼັກຂອງ OpenWrt ເພື່ອເປີດໃຊ້ການຮອງຮັບ IPv6"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1084
+msgid "Please press [Read] button"
+msgstr "ກະລຸນາກົດປຸ່ມ [ອ່ານ]"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:716
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:738
+msgid "Provide either an Update Script OR an Update URL"
+msgstr "ໃຫ້ລະບຸ ສະຄຣິບອັບເດດ ຫຼື URL ອັບເດດ ຢ່າງໃດຢ່າງໜຶ່ງ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1067
+msgid "Read / Reread log file"
+msgstr "ອ່ານ / ອ່ານໄຟລ໌ບັນທຶກ (Log) ໃໝ່"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:690
+msgid "Really switch service?"
+msgstr "ຕ້ອງການປ່ຽນບໍລິການແທ້ໆບໍ່?"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1128
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:30
+msgid "Registered IP"
+msgstr "IP ທີ່ລົງທະບຽນ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:564
+msgid "Reload"
+msgstr "ໂຫຼດໃໝ່"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:549
+msgid "Reload this service"
+msgstr "ໂຫຼດບໍລິການນີ້ໃໝ່"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:746
+msgid "Replaces [DOMAIN] in Update-URL (URL-encoded)"
+msgstr "ແທນທີ່ [DOMAIN] ໃນ Update-URL (URL-encoded)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:758
+msgid "Replaces [PASSWORD] in Update-URL (URL-encoded)"
+msgstr "ແທນທີ່ [PASSWORD] ໃນ Update-URL (URL-encoded)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:752
+msgid "Replaces [USERNAME] in Update-URL (URL-encoded)"
+msgstr "ແທນທີ່ [USERNAME] ໃນ Update-URL (URL-encoded)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:289
+msgid "Restart DDns"
+msgstr "ຣີສະຕາດ DDns"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1056
+msgid "Retry Unit"
+msgstr "ຫົວໜ່ວຍການລອງໃໝ່"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:17
+msgid "Run once"
+msgstr "ເຮັດວຽກຄັ້ງດຽວ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:230
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1118
+msgid "Running"
+msgstr "ກຳລັງເຮັດວຽກ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:810
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:867
+msgid "Script"
+msgstr "ສະຄຣິບ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:516
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:654
+msgid "Select a service"
+msgstr "ເລືອກບໍລິການ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:517
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:656
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:676
+msgid "Service doesn't support this IP type"
+msgstr "ບໍລິການບໍ່ຮອງຮັບ IP ປະເພດນີ້"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:655
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:666
+msgid "Service not installed"
+msgstr "ບໍ່ໄດ້ຕິດຕັ້ງບໍລິການ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:454
+msgid "Services"
+msgstr "ບໍລິການ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:449
+msgid "Services URL Download"
+msgstr "ດາວໂຫຼດ URL ບໍລິການ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:293
+msgid "Services list last update"
+msgstr "ລາຍການບໍລິການທີ່ອັບເດດຫຼ້າສຸດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1006
+msgid "Setting this parameter to 0 will force the script to only run once"
+msgstr "ການຕັ້ງພາຣາມິເຕີນີ້ເປັນ 0 ຈະບັງຄັບໃຫ້ສະຄຣິບເຮັດວຽກພຽງຄັ້ງດຽວ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:450
+msgid ""
+"Source URL for services file. Defaults to the master openwrt ddns package "
+"repo."
+msgstr "URL ແຫຼ່ງທີ່ມາສຳລັບໄຟລ໌ບໍລິການ. ຄ່າເລີ່ມຕົ້ນແມ່ນ master openwrt ddns package repo."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:200
+msgid "Start DDNS"
+msgstr "ເລີ່ມ DDNS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:271
+msgid "State"
+msgstr "ສະຖານະ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1115
+msgid "Status"
+msgstr "ສະຖານະ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:409
+msgid "Status directory"
+msgstr "ໄດເລກະທໍຣີສະຖານະ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:563
+msgid "Stop"
+msgstr "ຢຸດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:200
+msgid "Stop DDNS"
+msgstr "ຢຸດ DDNS"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:554
+msgid "Stop this service"
+msgstr "ຢຸດບໍລິການນີ້"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:19
+msgid "Stopped"
+msgstr "ຢຸດແລ້ວ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:691
+msgid "Switch service"
+msgstr "ປ່ຽນບໍລິການ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1041
+msgid "The default setting of '0' will retry infinitely."
+msgstr "ການຕັ້ງຄ່າເລີ່ມຕົ້ນ '0' ຈະລອງໃໝ່ໄປເລື້ອຍໆບໍ່ມີສິ້ນສຸດ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1049
+msgid "The interval between which each subsequent retry commences."
+msgstr "ໄລຍະຫ່າງລະຫວ່າງການລອງໃໝ່ແຕ່ລະຄັ້ງ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:496
+msgid "The service name is already used"
+msgstr "ຊື່ບໍລິການນີ້ມີຜູ້ໃຊ້ແລ້ວ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:43
+msgid "There is no service configured."
+msgstr "ບໍ່ມີບໍລິການທີ່ຖືກຕັ້ງຄ່າ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:334
+msgid ""
+"This is only a problem with multiple WAN interfaces and your DDNS provider "
+"is unreachable via one of them."
+msgstr ""
+"ນີ້ແມ່ນບັນຫາກໍລະນີທີ່ມີຫຼາຍ WAN interface ແລະ ຜູ້ໃຫ້ບໍລິການ DDNS ຂອງທ່ານບໍ່ສາມາດຕິດຕໍ່ໄດ້ຜ່ານໜຶ່ງໃນນັ້ນ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1083
+msgid "This is the current content of the log file in %h for this service."
+msgstr "ນີ້ແມ່ນເນື້ອຫາປະຈຸບັນຂອງໄຟລ໌ບັນທຶກ (Log) ໃນ %h ສຳລັບບໍລິການນີ້."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:209
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:276
+msgid ""
+"This is the default if you run DDNS scripts by yourself (i.e. via cron with "
+"force_interval set to '0')"
+msgstr ""
+"ນີ້ແມ່ນຄ່າເລີ່ມຕົ້ນຖ້າທ່ານເປີດສະຄຣິບ DDNS ດ້ວຍຕົນເອງ (ຕົວຢ່າງ: ຜ່ານ cron ດ້ວຍ force_interval "
+"ຕັ້ງເປັນ '0')"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:891
+msgid "This will be autoset to the selected interface"
+msgstr "ອັນນີ້ຈະຖືກຕັ້ງຄ່າອັດຕະໂນມັດໃຫ້ກັບອິນເຕີເຟດທີ່ເລືອກ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:605
+msgid "Timer Settings"
+msgstr "ການຕັ້ງຄ່າເວລາ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:808
+msgid "URL"
+msgstr "URL"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:849
+msgid "URL to detect"
+msgstr "URL ເພື່ອກວດສອບ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:228
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:229
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1148
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1149
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:38
+msgid "Unknown"
+msgstr "ບໍ່ຮູ້ຈັກ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:300
+msgid "Update DDns Services List"
+msgstr "ອັບເດດລາຍການບໍລິການ DDns"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:681
+msgid "Update URL"
+msgstr "ອັບເດດ URL"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:706
+msgid "Update URL for updating your DDNS Provider."
+msgstr "ອັບເດດ URL ສຳລັບການອັບເດດຜູ້ໃຫ້ບໍລິການ DDNS ຂອງທ່ານ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:779
+msgid "Use HTTP Secure"
+msgstr "ໃຊ້ HTTP ແບບປອດໄພ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:434
+msgid "Use cURL"
+msgstr "ໃຊ້ cURL"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:868
+msgid "User defined script to read system IP-Address"
+msgstr "ສະຄຣິບທີ່ຜູ້ໃຊ້ກຳນົດເພື່ອອ່ານທີ່ຢູ່ IP ຂອງລະບົບ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:751
+msgid "Username"
+msgstr "ຊື່ຜູ້ໃຊ້"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:370
+msgid "Using specific DNS Server not supported"
+msgstr "ບໍ່ຮອງຮັບການໃຊ້ເຊີບເວີ DNS ສະເພາະ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:988
+msgid "Values below 5 minutes == 300 seconds are not supported"
+msgstr "ບໍ່ຮອງຮັບຄ່າທີ່ນ້ອຍກວ່າ 5 ນາທີ == 300 ວິນາທີ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1023
+msgid "Values lower than 'Check Interval' except '0' are invalid"
+msgstr "ຄ່າທີ່ນ້ອຍກວ່າ 'ໄລຍະຫ່າງໃນການກວດສອບ' ຍົກເວັ້ນ '0' ແມ່ນບໍ່ຖືກຕ້ອງ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:16
+msgid "Verify"
+msgstr "ກວດສອບ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:963
+msgid "Warning"
+msgstr "ຄຳເຕືອນ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:503
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:627
+msgid "Which record type to update at the DDNS provider (A/AAAA)"
+msgstr "ປະເພດເລກບັນທຶກໃດທີ່ຈະອັບເດດທີ່ຜູ້ໃຫ້ບໍລິການ DDNS (A/AAAA)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1057
+msgid "Which time units to use for retry counters."
+msgstr "ຫົວໜ່ວຍເວລາທີ່ຈະໃຊ້ສຳລັບຕົວນັບການລອງໃໝ່."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:972
+msgid ""
+"Writes detailed messages to log file. File will be truncated automatically."
+msgstr "ຂຽນຂໍ້ຄວາມລະອຽດລົງໄຟລ໌ບັນທຶກ (Log). ໄຟລ໌ຈະຖືກຕັດອອກອັດຕະໂນມັດ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:956
+msgid ""
+"Writes log messages to syslog. Critical Errors will always be written to "
+"syslog."
+msgstr "ຂຽນຂໍ້ຄວາມ Log ລົງ syslog. ຂໍ້ຜິດພາດທີ່ຮ້າຍແຮງຈະຖືກຂຽນລົງ syslog ສະເໝີ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:374
+msgid ""
+"You should install 'bind-host' or 'knot-host' or 'drill' or 'hostip' "
+"package, if you need to specify a DNS server to detect your registered IP."
+msgstr ""
+"ທ່ານຄວນຕິດຕັ້ງແພັກເກັດ 'bind-host' ຫຼື 'knot-host' ຫຼື 'drill' ຫຼື 'hostip', "
+"ຖ້າທ່ານຕ້ອງການກຳນົດເຊີບເວີ DNS ເພື່ອກວດສອບ IP ທີ່ລົງທະບຽນຂອງທ່ານ."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:322
+msgid ""
+"You should install 'wget' or 'curl' or 'uclient-fetch' with 'libustream-"
+"*ssl' package."
+msgstr ""
+"ທ່ານຄວນຕິດຕັ້ງ 'wget' ຫຼື 'curl' ຫຼື 'uclient-fetch' ພ້ອມກັບແພັກເກັດ 'libustream-*ssl'."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:336
+msgid "You should install 'wget' or 'curl' package."
+msgstr "ທ່ານຄວນຕິດຕັ້ງແພັກເກັດ 'wget' ຫຼື 'curl'."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:350
+msgid ""
+"You should install 'wget' or 'uclient-fetch' package or replace libcurl."
+msgstr "ທ່ານຄວນຕິດຕັ້ງແພັກເກັດ 'wget' ຫຼື 'uclient-fetch' ຫຼື ປ່ຽນ libcurl."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:348
+msgid "cURL is installed, but libcurl was compiled without proxy support."
+msgstr "ຕິດຕັ້ງ cURL ແລ້ວ, ແຕ່ libcurl ຖືກຄອມໄພລ໌ໂດຍບໍ່ມີການຮອງຮັບພຣັອກຊີ (Proxy)."
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:347
+msgid "cURL without Proxy Support"
+msgstr "cURL ທີ່ບໍ່ມີການຮອງຮັບພຣັອກຊີ (Proxy)"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:512
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:639
+msgid "custom"
+msgstr "ກຳນົດເອງ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1035
+msgid "days"
+msgstr "ມື້"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:786
+msgid "directory or path/file"
+msgstr "ໄດເລກະທໍຣີ ຫຼື ເສັ້ນທາງ/ໄຟລ໌"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1000
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1034
+msgid "hours"
+msgstr "ຊົ່ວໂມງ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:999
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1033
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1061
+msgid "minutes"
+msgstr "ນາທີ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:788
+msgid "or"
+msgstr "ຫຼື"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:312
+msgid "or update your system to the latest OpenWrt Release"
+msgstr "ຫຼື ອັບເດດລະບົບຂອງທ່ານໃຫ້ເປັນ OpenWrt Release ລ່າສຸດ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:998
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1060
+msgid "seconds"
+msgstr "ວິນາທີ"
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:790
+msgid "to run HTTPS without verification of server certificates (insecure)"
+msgstr "ເພື່ອແລ່ນ HTTPS ໂດຍບໍ່ຕ້ອງມີການກວດສອບໃບຢັ້ງຢືນຂອງເຊີບເວີ (ບໍ່ປອດໄພ)"

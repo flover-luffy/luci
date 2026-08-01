@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-02 19:05+0000\n"
-"Last-Translator: UDP <udp@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-06-09 01:02+0000\n"
+"Last-Translator: ZW <roc_fe@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/openwrt/luciapplicationslibreswan/zh_Hant/>\n"
 "Language: zh_Hant\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/proposals.js:50
 msgid "3DES*"
@@ -46,7 +46,7 @@ msgstr ""
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/proposals.js:17
 msgid "Add Proposal"
-msgstr ""
+msgstr "新增提案"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:47
 msgid "Add Tunnel"
@@ -148,7 +148,7 @@ msgstr "除錯紀錄"
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/overview.js:62
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/overview.js:63
 msgid "Down"
-msgstr ""
+msgstr "下移"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/globals.js:56
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:240
@@ -178,7 +178,7 @@ msgstr ""
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:180
 msgid "IKE Life Time"
-msgstr ""
+msgstr "IKE 生命週期"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:161
 msgid "IKE V2"
@@ -202,12 +202,12 @@ msgstr "IPSec 全域設定"
 
 #: applications/luci-app-libreswan/root/usr/share/luci/menu.d/luci-app-libreswan.json:20
 msgid "IPSec Globals"
-msgstr ""
+msgstr "IPSec 全域"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/proposals.js:11
 #: applications/luci-app-libreswan/root/usr/share/luci/menu.d/luci-app-libreswan.json:29
 msgid "IPSec Proposals"
-msgstr ""
+msgstr "IPSec 提案"
 
 #: applications/luci-app-libreswan/root/usr/share/luci/menu.d/luci-app-libreswan.json:38
 msgid "IPSec Tunnels"
@@ -276,7 +276,7 @@ msgstr "本地子網路"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:129
 msgid "Local Subnets"
-msgstr ""
+msgstr "本地子網路"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/proposals.js:42
 msgid "MD5*"
@@ -313,7 +313,7 @@ msgstr "階段1"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:167
 msgid "Phase1 Proposals"
-msgstr ""
+msgstr "階段 1 提案"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/overview.js:41
 msgid "Phase2"
@@ -321,7 +321,7 @@ msgstr "階段2"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:234
 msgid "Phase2 Proposals"
-msgstr ""
+msgstr "階段 2 提案"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:228
 msgid "Phase2 Protocol"
@@ -361,7 +361,7 @@ msgstr "遠端子網路"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:142
 msgid "Remote Subnets"
-msgstr ""
+msgstr "遠端子網路"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:215
 msgid "Restart"
@@ -393,7 +393,7 @@ msgstr "SHA512"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:148
 msgid "Shared Secret"
-msgstr "共享祕密"
+msgstr "共享密碼"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/overview.js:42
 msgid "Status"
@@ -440,7 +440,7 @@ msgstr "不安全，請見"
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/overview.js:62
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/overview.js:63
 msgid "Up"
-msgstr ""
+msgstr "上移"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/tunnels.js:267
 msgid "Update Peer Address"
