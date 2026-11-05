@@ -524,6 +524,12 @@ msgstr "启用安全搜索"
 msgid "Enable Unfiltered DNS Routing"
 msgstr "开启直通的 DNS 路由"
 
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:856
+msgid ""
+"Enable a GeoIP map that shows the geographical location of the blocked "
+"domains."
+msgstr "启用 GeoIP 地图，显示被拦截域名的地理位置。"
+
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:408
 msgid "Enable the adblock service."
 msgstr "启用广告拦截服务。"
@@ -699,6 +705,10 @@ msgstr ""
 msgid "General Settings"
 msgstr "通用设置"
 
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:856
+msgid "GeoIP Map"
+msgstr "GeoIP 地图"
+
 #: applications/luci-app-adblock/root/usr/share/rpcd/acl.d/luci-app-adblock.json:3
 msgid "Grant access to LuCI app adblock"
 msgstr "授予访问 LuCI 应用 adblock 的权限"
@@ -751,6 +761,10 @@ msgstr "DNS 过滤器目标接口"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/feeds.js:231
 msgid "Invalid characters"
 msgstr "无效字符"
+
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:850
+msgid "Invalid characters in the tcpdump filter expression!"
+msgstr "tcpdump 过滤表达式包含无效字符！"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/feeds.js:43
 msgid "Invalid feed entry: %s"
@@ -931,6 +945,10 @@ msgstr "自定义拦截列表存放目录。"
 msgid "Profile used by 'msmtp' for adblock notification E-Mails."
 msgstr "msmtp 发送 adblock 通知电子邮件时的配置文件。"
 
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/feeds.js:114
+msgid "Protocol/URL format not supported"
+msgstr "不支持该协议/URL 格式"
+
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:694
 msgid "QRCode for Remote Access"
 msgstr "远程访问的二维码"
@@ -1010,6 +1028,14 @@ msgstr "tcpdump 抓包文件分块保留数量。"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:853
 msgid "Report chunk size used by tcpdump in MByte."
 msgstr "tcpdump 抓包文件分块大小（MByte）。"
+
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:853
+msgid "Resolve IPs"
+msgstr "解析 IP"
+
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:853
+msgid "Resolve reporting IP addresses by using reverse DNS (PTR) lookups."
+msgstr "通过反向 DNS（PTR）查询解析上报的 IP 地址。"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:138
 msgid "Result"

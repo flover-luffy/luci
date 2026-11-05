@@ -873,6 +873,10 @@ msgstr "处理日志"
 msgid "Profile used by 'msmtp' for banIP notification E-Mails."
 msgstr "“msmtp”所用的 banIP 电子邮件通知配置。"
 
+#: applications/luci-app-banip/htdocs/luci-static/resources/view/banip/feeds.js:114
+msgid "Protocol/URL format not supported"
+msgstr "不支持该协议/URL 格式"
+
 #: applications/luci-app-banip/htdocs/luci-static/resources/view/banip/overview.js:982
 msgid "RIPE - serving Europe, Middle East and Central Asia"
 msgstr "RIPE - 服务欧洲、中东和中亚"

@@ -159,6 +159,10 @@ msgstr "已存在一个配置默认部分。"
 msgid "A section name may only contain letters, digits and underscores."
 msgstr "部分名称只能含字母、数字和下划线。"
 
+#: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1215
+msgid "Action"
+msgstr "操作"
+
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:856
 msgid "Active"
 msgstr "活动"
@@ -424,6 +428,10 @@ msgstr ""
 "timeout 3600, dscp_default_tcp/udp CS0, dscp_prio/dscp_bulk/dscp_icmp unset, "
 "bulk_trigger_pps/bulk_trigger_timeout/prio_max_avg_pkt_len 0（禁用）。"
 
+#: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1215
+msgid "Description"
+msgstr "描述"
+
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:718
 msgid "Device"
 msgstr "设备"
@@ -582,6 +590,13 @@ msgstr "错误：overhead_mpu 必须是整数字节"
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:2070
 msgid "Errors:"
 msgstr "错误："
+
+#: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1216
+msgid ""
+"Every shaped section is looked up again, one whose device now exists is "
+"started and one whose device has gone is stopped. Nothing is reported back "
+"by the call — the result shows in the Service table on the Overview tab."
+msgstr "会重新查找所有限速配置：设备已存在的会被启动，设备已移除的会被停止。此操作不返回结果，可在“概览”标签页的服务表中查看。"
 
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:941
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1198
@@ -854,13 +869,9 @@ msgstr "只重新读取映射文件"
 msgid "Re-reading the mapping files..."
 msgstr "正在重新读取映射文件…"
 
-#: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1215
-msgid ""
-"Re-runs the daemon's own device pass: every shaped section is looked up "
-"again, one whose device now exists is started and one whose device has gone "
-"is stopped. Nothing is reported back by the call — the result shows in the "
-"Service table on the Overview tab."
-msgstr ""
+#: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1214
+msgid "Re-runs the daemon's own device pass."
+msgstr "重新执行守护进程的设备扫描。"
 
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:2024
 msgid "Read error"
@@ -889,6 +900,10 @@ msgstr "重新加载规则"
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1695
 msgid "Reload failed: %s"
 msgstr "重新加载失败：%s"
+
+#: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1223
+msgid "Replaced with"
+msgstr "替换为"
 
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1585
 msgid "Requires write access."
@@ -926,6 +941,10 @@ msgstr "恢复"
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1218
 msgid "Restore qosify defaults"
 msgstr "恢复 qosify 默认值"
+
+#: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1222
+msgid "Restore qosify defaults. Shaping is left disabled."
+msgstr "恢复 qosify 默认设置，限速功能保持禁用。"
 
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:2095
 msgid "Restoring defaults..."
@@ -1345,6 +1364,11 @@ msgstr "qosify 未在运行。从概况标签页启动。"
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1887
 msgid "qosify is still running — leaving the qdiscs alone"
 msgstr "qosify 仍在运行 —— 别动 qdiscs"
+
+#: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1224
+#: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1225
+msgid "qosify package template"
+msgstr "qosify 软件包模板"
 
 #: applications/luci-app-qosify/htdocs/luci-static/resources/view/qosify/main.js:1253
 msgid "qosify-status"
