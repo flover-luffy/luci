@@ -8,46 +8,6 @@
 				],
 				"/tmp/run/travelmate/travelmate.refresh": [
 					"write"
-				]
-			},
-			"uci": [
-				"travelmate",
-				"wireless"
-			]
-		},
-		"read": {
-			"cgi-io": [
-				"download",
-				"exec"
-			],
-			"file": {
-				"/etc/travelmate": [
-					"list"
-				],
-				"/etc/travelmate/*.login": [
-					"list"
-				],
-				"/var/run/travelmate/travelmate.scan": [
-					"read"
-				],
-				"/tmp/run/travelmate/travelmate.scan": [
-					"read"
-				],
-				"/var/run/travelmate/travelmate.refresh": [
-					"read",
-					"list"
-				],
-				"/tmp/run/travelmate/travelmate.refresh": [
-					"read",
-					"list"
-				],
-				"/var/run/travelmate/travelmate.runtime.json": [
-					"read",
-					"list"
-				],
-				"/tmp/run/travelmate/travelmate.runtime.json": [
-					"read",
-					"list"
 				],
 				"/sbin/ifup *": [
 					"exec"
@@ -71,15 +31,58 @@
 			"ubus": {
 				"file": [
 					"exec",
-					"stat"
+					"remove"
 				]
 			},
 			"uci": [
 				"travelmate",
 				"wireless"
-			],
-			"log": [
-				"read"
+			]
+		},
+		"read": {
+			"file": {
+				"/etc/travelmate": [
+					"list"
+				],
+				"/etc/travelmate/*.uc": [
+					"list"
+				],
+				"/var/run/travelmate/travelmate.scan": [
+					"read"
+				],
+				"/tmp/run/travelmate/travelmate.scan": [
+					"read"
+				],
+				"/var/run/travelmate/travelmate.refresh": [
+					"read",
+					"list"
+				],
+				"/tmp/run/travelmate/travelmate.refresh": [
+					"read",
+					"list"
+				],
+				"/var/run/travelmate/travelmate.runtime.json": [
+					"read",
+					"list"
+				],
+				"/tmp/run/travelmate/travelmate.runtime.json": [
+					"read",
+					"list"
+				]
+			},
+			"ubus": {
+				"file": [
+					"list",
+					"read",
+					"stat"
+				],
+				"log": [
+					"read"
+				]
+			},
+			"uci": [
+				"travelmate",
+				"wireless"
 			]
 		}
 	}
