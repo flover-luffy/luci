@@ -12,7 +12,7 @@ var pkg = {
 		return "adblock-fast";
 	},
 	get LuciCompat() {
-		return 17;
+		return 18;
 	},
 	get ChromeExtensionId() {
 		return "klkdabjeohlmbcnidbealmacfjlihopo";
@@ -95,6 +95,9 @@ var pkg = {
 		warningExternalDnsmasqConfig: _(
 			"Use of external dnsmasq config file detected, please set '%s' option to '%s'",
 		).format("dns", "dnsmasq.conf"),
+		warningBindManualConfig: _(
+			"BIND RPZ zone written; ensure named.conf includes '%s' and adds 'response-policy { zone \"rpz.adblock-fast\"; };' to its options{} (one-time setup)",
+		),
 		warningMissingRecommendedPackages: _("Missing recommended package: '%s'"),
 		warningOutdatedLuciPackage: _(
 			"The WebUI application (luci-app-adblock-fast) is outdated, please update it",
@@ -212,7 +215,11 @@ var _syncCron = rpc.declare({
 function syncCron(name, action, schedule) {
 	var s = schedule || {};
 	return _syncCron(
-		name, action,
+		// rpc.declare() maps positional values to named JSON members. Passing
+		// null here sends `"action": null`, which rpcd rejects because action is
+		// declared as a string. Use undefined so JSON serialization omits the
+		// optional member for schedule-only updates.
+		name, action ?? undefined,
 		s.auto_update_enabled, s.auto_update_mode, s.auto_update_minute,
 		s.auto_update_hour, s.auto_update_weekday, s.auto_update_monthday,
 		s.auto_update_every_ndays, s.auto_update_every_nhours,
@@ -685,8 +692,6 @@ var status = baseclass.extend({
 							btn_enable,
 							btn_disable,
 						];
-						if (typeof btn_sync_cron !== "undefined")
-							allButtons.push(btn_sync_cron);
 						allButtons.forEach(function (b) {
 							b.disabled = true;
 						});
